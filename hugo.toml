@@ -1,0 +1,26 @@
+baseURL = 'https://7k-7k-15.buzz/'
+languageCode = "ru"
+title = ''
+theme = "gmb-univ"
+enableRobotsTXT = true
+
+defaultContentLanguage = "ru"
+
+[languages]
+  [languages.ru]
+    languageName = "Russian"
+    weight = 1
+
+
+[taxonomies]
+
+[params]
+  author = "Casinous"
+  logo = "/images/casinous/logo.png"
+  description = "1xbet официальный сайт. Актуальное рабочее зеркало для входа на сайт. Регистрация, личный кабинет, ставки и раздел с приложением для Андроид"
+
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

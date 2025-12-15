@@ -1,0 +1,145 @@
+[
+  {
+    "position": "header-1",
+    "id_page": "",
+    "type": "logo",
+    "imageUrl": "/images/casinous/logo.png",
+    "link": "/"
+  },
+  {
+    "position": "header-2",
+    "id_page": "",
+    "type": "two-botton",
+    "name_button_1": "Регистрация",
+    "link_1": "/go.php?prt=1xbet",
+    "name_button_2": "Логин",
+    "link_2": "/go.php?prt=1xbet"
+  },
+  {
+    "position": "menu-header",
+    "type": "menu-item",
+    "title": "Главная",
+    "link": "/",
+    "weight": 10
+  },
+  {
+    "position": "menu-header",
+    "type": "menu-item",
+    "title": "О нас",
+    "link": "/about/",
+    "weight": 20
+  },
+  {
+    "position": "menu-header",
+    "type": "menu-item",
+    "title": "Информация",
+    "link": "/info/",
+    "weight": 30,
+    "children": [
+      {
+        "title": "Правила",
+        "link": "/info/rules/"
+      },
+      {
+        "title": "Лицензия",
+        "link": "/info/license/",
+        "children": [
+          {
+            "title": "Curacao",
+            "link": "/info/license/curacao"
+          },
+          {
+            "title": "Malta",
+            "link": "/info/license/malta"
+          }
+        ]
+      },
+      {
+        "title": "FAQ",
+        "link": "/info/faq/"
+      }
+    ]
+  },
+  {
+    "position": "menu-header",
+    "type": "menu-item",
+    "title": "Блог",
+    "link": "/blog/",
+    "weight": 40
+  },
+  {
+    "position": "menu-header",
+    "type": "menu-item",
+    "title": "Слоты",
+    "link": "/go.php?prt=1xbet",
+    "weight": 50
+  },
+  {
+    "position": "main-promo",
+    "id_page": "",
+    "type": "button",
+    "description": "Получить бонус 20%",
+    "link": "/go.php?prt=1xbet"
+  },
+  {
+    "position": "footer-logo",
+    "id_page": "",
+    "type": "logo",
+    "imageUrl": "/images/casinous/logo.png",
+    "link": "/"
+  },
+  {
+    "position": "menu-footer",
+    "type": "menu-item",
+    "title": "О сайте",
+    "link": "/go.php?prt=1xbet",
+    "weight": 10
+  },
+  {
+    "position": "menu-footer",
+    "type": "menu-item",
+    "title": "Блог",
+    "link": "/blog/",
+    "weight": 20
+  },
+  {
+    "position": "menu-footer",
+    "type": "menu-item",
+    "title": "Услуги",
+    "link": "/service/",
+    "weight": 30
+  },
+  {
+    "position": "menu-footer",
+    "type": "menu-item",
+    "title": "Контакты",
+    "link": "/go.php?prt=1xbet",
+    "weight": 40
+  },
+  {
+    "position": "footer-1",
+    "id_page": "",
+    "type": "icon-and-text",
+    "title": "<img src='/images/different/1/5.avif' decoding='auto' alt='icon' />",
+    "description": "Владельцем и оператором сайта drgnq9.casino является Dragon Money N.V., регистрационный номер - 159322, юридический адрес - Abraham de Veerstraat 9, Willemstad, Curaçao. Вы можете связаться с нами по электронной почте support@drgn.casino"
+  },
+  {
+    "position": "footer-2",
+    "id_page": "",
+    "type": "icon-and-text",
+    "title": "<div class='red-den'>+18</div>",
+    "description": "Азартные игры призваны развлекать. Помните, что Вы рискуете деньгами, когда делаете ставки. Не тратьте больше, чем можете позволить себе проиграть."
+  },
+  {
+    "position": "copyright",
+    "id_page": "",
+    "type": "copyright",
+    "description": "Все права защищены ©"
+  },
+  {
+    "position": "footer-img",
+    "id_page": "",
+    "type": "icon-and-text",
+    "title": "<div class='shapes'><img src='/images/casinous/footer/shape.png' alt='footer' class='shape1' /></div>"
+  }
+]
