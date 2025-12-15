@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="page-content">
+  {{ partial "blocks/inner-banner.html" . }}
+  <div class="container">
+    <div class="blog-list">
+      {{ range .Pages }}
+      <div class="blog-card">
+        <a href="{{ .RelPermalink }}">
+          {{ if .Params.image }}
+          <img src="{{ .Params.image }}" alt="{{ .Title }}" class="blog-card-img" />
+          {{ end }}
+          <h2>{{ .Title }}</h2>
+          <p class="line-clamp-4">{{ .Summary }}</p>
+          <div class="meta">
+            <time>{{ .Date.Format "02.01.2006" }}</time>
+            <span>{{ site.Params.label_read_time }} {{ .ReadingTime }} {{ site.Params.label_minutes }}</span>
+            <div class="readmore">{{ site.Params.label_read_more }}</div>
+          </div>
+        </a>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,27 @@
+{{/* Этот шаблон ожидает получить контекст страницы (.).
+  Он берет данные из .Params.
+*/}}
+
+{{ $bg_image := .Params.banner_bg | default "/images/casinous/inner-banner/bg2.jpg" | relURL }}
+{{ $title := .Params.banner_title_1 | default .Title }}
+{{ $bread_1 := .Params.breadcrumb_1 | default "Home" }}
+{{ $bread_2 := .Params.breadcrumb_2 | default "Blog" }}
+{{ $bread_3 := .Params.breadcrumb_3 | default .Title }}
+
+<section class="inner-banner bg_img" style="background: url('{{ $bg_image }}') top">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 col-xl-6 text-center">
+        
+        <h1 class="title text-white">{{ $title }}</h1>
+        
+        <ul class="breadcrumbs d-flex flex-wrap align-items-center justify-content-center">
+          <li><a href="{{ "/" | relURL }}">{{ $bread_1 }}</a></li>
+          <li><a href="{{ "/blog/" | relURL }}">{{ $bread_2 }}</a></li>
+          <li>{{ $bread_3 }}</li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</section>

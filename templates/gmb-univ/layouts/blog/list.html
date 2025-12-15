@@ -1,0 +1,71 @@
+{{/* {{ define "main" }}
+<div class="page-content">
+  {{ partial "blocks/inner-banner.html" . }}
+  <div class="container">
+    <div class="blog-list">
+      {{ range .Pages }}
+      <div class="blog-card">
+        <a href="{{ .RelPermalink }}">
+          {{ if .Params.image }}
+          <img src="{{ .Params.image }}" alt="{{ .Title }}" class="blog-card-img" />
+          {{ end }}
+          <h2>{{ .Title }}</h2>
+          <p class="line-clamp-4">{{ .Summary }}</p>
+          <div class="meta">
+            <time>{{ .Date.Format "02.01.2006" }}</time>
+
+            <span>{{ i18n "readingTime" .ReadingTime }}</span>
+            <div class="readmore">{{ i18n "readMore" }}</div>
+          </div>
+        </a>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }} */}} {{ define "main" }}
+<section class="blog-section padding-top padding-bottom bg_img" style="background: url(assets/images/blog/bg.png)">
+  {{ partial "blocks/inner-banner.html" . }}
+  <div class="container">
+    <div class="block-inner row gy-4 justify-content-center">
+      {{ range .Pages }}
+      <div class="col-lg-4 col-md-6 col-sm-10">
+        <div class="blog-item">
+          <div class="blog-item__thumb">
+            {{ if .Params.image }}
+            <img src="{{ .Params.image }}" alt="{{ .Title }}" />
+            {{ end }}
+          </div>
+          <div class="blog-item__content">
+            <ul class="blog__meta d-flex justify-content-between mb-2">
+              <li>{{ .Date.Format "02.01.2006" }}</li>
+              <li>
+                <span>{{ i18n "readingTime" .ReadingTime }}</span>
+              </li>
+            </ul>
+            <h4 class="title mb-2"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
+            <p class="line-clamp-4">{{ .Summary }}</p>
+            <div class="meta">
+              <div class="readmore">{{ i18n "readMore" }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    {{/*
+    <ul class="pagination">
+      <li class="page-item disabled">
+        <a href="#0" class="page-link"><i class="las la-arrow-left"></i></a>
+      </li>
+      <li class="page-item active"><a href="#0" class="page-link">01</a></li>
+      <li class="page-item"><a href="#0" class="page-link">02</a></li>
+      <li class="page-item"><a href="#0" class="page-link">03</a></li>
+      <li class="page-item">
+        <a href="#0" class="page-link"><i class="las la-arrow-right"></i></a>
+      </li>
+    </ul>
+    */}}
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,8 @@
+{{/* --- ФИНАЛЬНАЯ ВЕРСИЯ ПРОВЕРЩИКА (с логикой приоритетов) --- */}} {{ $should_render := false }} {{ $position_id := .position }} {{ $current_page_url := $.page.RelPermalink }} {{
+$all_blocks_with_this_pos := where site.Data.placeholders "position" $position_id }} {{ $block_to_render := false }} {{/* Приоритет 1: Ищем точное совпадение по строке */}} {{ $exact_match := where
+$all_blocks_with_this_pos "id_page" $current_page_url }} {{ if ge (len $exact_match) 1 }} {{ $block_to_render = true }} {{ end }} {{/* Приоритет 2: Если не нашли, ищем в массивах */}} {{ if not
+$block_to_render }} {{ range $all_blocks_with_this_pos }} {{ if reflect.IsSlice .id_page }} {{ if in .id_page $current_page_url }} {{ $block_to_render = true }} {{ end }} {{ end }} {{ end }} {{ end }}
+{{/* Приоритет 3: Если не нашли, ищем "глобальный" блок (пустая строка) */}} {{ if not $block_to_render }} {{ $global_block := where $all_blocks_with_this_pos "id_page" "" }} {{ if ge (len
+$global_block) 1 }} {{ $block_to_render = true }} {{ end }} {{ end }} {{/* Приоритет 4: Если не нашли, ищем блок, где 'id_page' вообще не указан */}} {{ if not $block_to_render }} {{ range
+$all_blocks_with_this_pos }} {{ if not (isset . "id_page") }} {{ $block_to_render = true }} {{ end }} {{ end }} {{ end }} {{ if $block_to_render }} {{ $should_render = true }} {{ end }} {{ return
+$should_render }}

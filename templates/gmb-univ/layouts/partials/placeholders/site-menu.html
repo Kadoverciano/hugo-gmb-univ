@@ -1,0 +1,12 @@
+{{/* Этот шаблон генерирует меню с именем "main". Он также добавляет класс
+"active" к ссылке на текущую страницу. */}} {{ $currentPage := . }}
+<nav class="main-nav" role="navigation">
+  <ul class="menu">
+    {{ range .Site.Menus.main }} {{ $active := or ($currentPage.IsMenuCurrent
+    "main" .) ($currentPage.HasMenuCurrent "main" .) }}
+    <li class="menu-item{{ if $active }} active{{ end }}">
+      <a href="{{ .URL | relURL }}" title="{{ .Title }}"> {{ .Name }} </a>
+    </li>
+    {{ end }}
+  </ul>
+</nav>

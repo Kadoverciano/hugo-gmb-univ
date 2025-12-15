@@ -1,0 +1,17 @@
+<section class="why-section padding-top padding-bottom overflow-hidden">
+  <div class="container">
+    <div class="row justify-content-between gy-5">
+      <div class="col-lg-5 col-xl-4">
+        <div class="section-header mb-4">
+          <h2 class="section-header__title">{{ .Get "title" }}</h2>
+          <p>{{ .Get "desc-1" }}</p>
+        </div>
+        <p>{{ .Get "desc-2" }}</p>
+      </div>
+      <div class="col-lg-7 col-xl-7">
+        <div class="row gy-4 gy-md-5 gy-lg-4 gy-xl-5">{{ .Inner }}</div>
+      </div>
+    </div>
+  </div>
+  <div class="shapes"><img src="{{ .Get "img-adw" }}" alt="why" class="shape shape1" /></div>
+</section>

@@ -1,0 +1,32 @@
+baseURL = "/"
+languageCode = "ru-ru"
+title = "Мой новый сайт на GMB V1"
+theme = "gmb-univ"
+resourceDir = "../resources"
+SectionPagesMenu = "main"
+Paginate = 10
+enableRobotsTXT = true
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[params]
+  custom_css = ["css/custom-styles.css"]
+  text_color = ""
+  author = "Сергей Фуфаев"
+  favicon = "/favicon.ico"
+  site_logo = "/images/logo.png"
+  description = "Это описание моего нового сайта, сделанного на Hugo с темой GMB V1."
+  background_color_class = "bg-light-gray"
+  recent_posts_number = 5
+
+  [[params.socials]]
+    name = "github"
+    url = "https://github.com/sergey-fufaev"
+
+  [[params.socials]]
+    name = "linkedin"
+    url = "https://linkedin.com/in/your-profile"
+

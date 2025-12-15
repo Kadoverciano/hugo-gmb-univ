@@ -1,0 +1,63 @@
+{{ define "main" }}
+<div class="page-content">
+      {{ partial "blocks/inner-banner-2.html" . }}
+    <div class="container">
+
+   
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "{{ .Title }}",
+    "datePublished": "{{ .Date.Format "2006-01-02" }}",
+    "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
+    "author": {
+      "@type": "Person",
+      "name": "{{ .Params.author | default site.Params.author }}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ site.Title }}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ site.Params.logo | absURL }}"
+      }
+    },
+    "description": "{{ .Description | default .Summary }}",
+    "image": "{{ if .Params.image }}{{ .Params.image | absURL }}{{ end }}"
+  }
+  </script>
+
+  <article class="blog-post" itemscope itemtype="https://schema.org/BlogPosting">
+    
+    <header class="post-header">
+      <h2 itemprop="headline">{{ .Title }}</h2>
+
+      <div class="post-meta">
+        <meta itemprop="datePublished" content="{{ .Date.Format "2006-01-02" }}">
+        <meta itemprop="dateModified" content="{{ .Lastmod.Format "2006-01-02" }}">
+        <meta itemprop="author" content="{{ .Params.author | default site.Params.author }}">
+        <meta itemprop="publisher" content="{{ site.Title }}">
+        <meta itemprop="image" content="{{ .Params.image | absURL }}">
+
+        <div class="post-info">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">
+                {{ .Date.Format "2.01.2006" }}
+            </time>
+            <span class="separator"></span>
+           <span class="read-time">
+           {{ i18n "readingTime" .ReadingTime }}
+            </span>
+        </div>
+      </div>
+    </header>
+
+    <div class="post-content" itemprop="articleBody">
+      {{ .Content }}
+    </div>
+
+  </article>
+   </div>
+</div>
+{{ end }}

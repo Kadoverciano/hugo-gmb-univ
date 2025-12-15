@@ -1,0 +1,11 @@
+<div class="sblock-img">
+  <div class="container">
+    <div class="sblock-img_inner sblock-img_inner-two">
+      {{ if .Get "img1" }}
+      <div class="sblock-img_item"><img src="{{ .Get "img1" | relURL }}" alt="{{ .Get "alt1" | default "" }}" /></div>
+      {{ end }} {{ if .Get "img2" }}
+      <div class="sblock-img_item"><img src="{{ .Get "img2" | relURL }}" alt="{{ .Get "alt2" | default "" }}" /></div>
+      {{ end }}
+    </div>
+  </div>
+</div>

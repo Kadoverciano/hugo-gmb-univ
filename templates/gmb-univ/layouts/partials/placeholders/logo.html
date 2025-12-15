@@ -1,0 +1,7 @@
+<div class="logo">
+  <a href="{{ .link }}">
+    {{ if .imageUrl }} <img src="{{ .imageUrl }}" alt="{{ .title | safeHTML }}" class="img-fluid" /> {{ end }} {{ if .title }}
+    <div class="logo-text">{{ .title | safeHTML }}</div>
+    {{ end }}
+  </a>
+</div>

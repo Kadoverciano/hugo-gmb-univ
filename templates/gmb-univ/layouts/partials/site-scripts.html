@@ -1,0 +1,13 @@
+{{/* --- 1. ФАЙЛЫ ИЗ ПАПКИ /static --- */}}
+{{/* Hugo просто скопирует их, а `relURL` создаст правильную ссылку */}}
+
+<script src="{{ "/js/lib/jquery-3.6.0.min.js" | relURL }}"></script>
+<script src="{{ "/js/lib/bootstrap.min.js" | relURL }}"></script>
+
+<script src="{{ "/js/lib/slick.min.js" | relURL }}"></script>
+
+
+{{/* --- 2. ФАЙЛ ИЗ ПАПКИ /assets --- */}}
+{{/* Hugo обработает (соберет) и сожмет ваш собственный main.js */}}
+{{ $appJS := resources.Get "js/main.js" | js.Build | minify }}
+<script src="{{ $appJS.RelPermalink }}" defer></script>

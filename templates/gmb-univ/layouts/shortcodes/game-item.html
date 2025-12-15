@@ -1,0 +1,23 @@
+{{- $limitText := .Get "limit-text" -}}
+{{- $limitAmount := .Get "limit-amount" -}}
+
+<div class="col-lg-4 col-xl-3 col-md-6 col-sm-6">
+  <div class="game-item">
+    <div class="game-inner">
+      <div class="game-item__thumb">
+        <img src="{{ .Get "img" | relURL }}" alt="{{ .Get "title" }}" />
+      </div>
+      <div class="game-item__content">
+        <h4 class="title">{{ .Get "title" }}</h4>
+        {{ if .Get "limit-text" }}
+        <p class="invest-info">{{ .Get "limit-text" }}</p>
+         {{ end }}
+        {{ if .Get "limit-amount" }}
+        <p class="invest-amount">{{ .Get "limit-amount" }}</p>
+        {{ end }}
+        <a href="{{ .Get "link" }}" class="cmn--btn active btn--md radius-0">{{ .Get "name" }}</a>
+      </div>
+    </div>
+    <div class="ball"></div>
+  </div>
+</div>

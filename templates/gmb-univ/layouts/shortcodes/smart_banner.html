@@ -1,0 +1,345 @@
+{{- $loadingText := .Get "loading_text" | default "Поиск зеркала..." -}} 
+{{- $logoText := .Get "logo_text" | default "Dragon Money" -}} 
+{{- $titleMain := .Get "title_main" | default "Приносим извинения!" -}} 
+{{- $titleSub := .Get "title_sub" | default "Сервера временно недоступны." -}} 
+{{- $text := .Get "text" -}} 
+{{- $btnText := .Get "btn_text" -}} 
+{{- $btnLink := .Get "btn_link" -}} 
+{{- $btnText1 := .Get "btn_text1" -}} 
+{{- $btnLink1 := .Get "btn_link1" -}} 
+{{- $btnText2 := .Get "btn_text2" -}} 
+{{- $btnLink2 := .Get "btn_link2" -}} 
+{{- $btnText3 := .Get "btn_text3" -}} 
+{{- $btnLink3 := .Get "btn_link3" -}}
+
+<style>
+  /* --- LUXURY CASINO STYLE --- */
+  .smart-banner-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #050505;
+    z-index: 999999;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+  .smart-banner-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 0%, #000 90%);
+    pointer-events: none;
+    z-index: -1;
+  }
+  .smart-banner-box {
+    background: radial-gradient(ellipse at center, #2e1035 0%, #0d0411 70%, #000000 100%);
+    padding: 40px 20px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+    border-radius: 4px;
+    box-shadow: 0 0 50px rgba(108, 26, 150, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    border: 1px solid #333;
+  }
+
+  /* Логотип */
+  .sb-logo-placeholder {
+    font-family: 'Times New Roman', serif;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    opacity: 0.7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .sb-logo-placeholder::before,
+  .sb-logo-placeholder::after {
+    content: '';
+    height: 1px;
+    width: 30px;
+    background: #666;
+  }
+
+  /* Заголовки */
+  .sb-header-main {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 28px;
+    line-height: 1.2;
+    margin: 0 0 10px 0;
+    background: linear-gradient(to bottom, #fdeebb 0%, #d4af37 50%, #ae8625 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+    font-weight: normal;
+  }
+  .sb-header-sub {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    margin: 0 0 20px 0;
+    color: #d4af37;
+    font-weight: normal;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+  }
+
+  /* Описание */
+  .sb-description {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    max-width: 480px;
+  }
+
+  /* Кнопки */
+  .sb-buttons-container {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .smart-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #fff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: transform 0.2s, filter 0.2s;
+    height: 55px;
+  }
+  .smart-btn:hover {
+    transform: scale(1.02);
+    filter: brightness(1.1);
+  }
+
+  /* Иконка фишки */
+  .smart-btn::before {
+    content: '';
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    margin-right: 15px;
+    flex-shrink: 0;
+    background: radial-gradient(circle, transparent 40%, rgba(0, 0, 0, 0.2) 50%, transparent 60%);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  .sb-btn-text {
+    flex-grow: 1;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    letter-spacing: 0.5px;
+  }
+
+  /* Цвета кнопок */
+  .smart-btn.btn-gold {
+    background: linear-gradient(180deg, #784c17 0%, #be8c3c 40%, #784c17 100%);
+    border-color: #ffd700;
+  }
+  .smart-btn.btn-gold::before {
+    background-color: #d4af37;
+    content: '7k';
+    color: #000;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+  }
+
+  .smart-btn.btn-blue {
+    background: linear-gradient(180deg, #162b4d 0%, #2e5a9e 40%, #162b4d 100%);
+    border-color: #5c8bd6;
+  }
+  .smart-btn.btn-blue::before {
+    background-color: #2e5a9e;
+    content: '1W';
+    color: #fff;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .smart-btn.btn-red {
+    background: linear-gradient(180deg, #4a0e16 0%, #911e2d 40%, #4a0e16 100%);
+    border-color: #d15664;
+  }
+  .smart-btn.btn-red::before {
+    background-color: #911e2d;
+    content: 'R';
+    color: #fff;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .smart-btn.btn-green {
+    background: linear-gradient(180deg, #0f3d0f 0%, #28a745 40%, #0f3d0f 100%);
+    border-color: #28a745;
+  }
+
+  /* Спиннер */
+  .sb-loader-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+  }
+  .sb-spinner {
+    width: 60px;
+    height: 60px;
+    border: 4px solid rgba(212, 175, 55, 0.2);
+    border-top: 4px solid #d4af37;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+  }
+  .sb-loading-text {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #d4af37;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    animation: pulse 1.5s infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes pulse {
+    0% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.6;
+    }
+  }
+  .sb-hidden {
+    display: none !important;
+  }
+  .smart-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #555;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .smart-close:hover {
+    color: #fff;
+  }
+</style>
+
+<div id="secret-preland-banner" class="smart-banner-overlay">
+  <div class="smart-banner-box">
+    <div class="smart-close" onclick="document.getElementById('secret-preland-banner').style.display='none'">&times;</div>
+
+    <div id="sb-loading-state" class="sb-loader-container">
+      <div class="sb-spinner"></div>
+      <div class="sb-loading-text">{{ $loadingText }}</div>
+    </div>
+
+    <div id="sb-content-state" class="sb-hidden" style="width: 100%; display: flex; flex-direction: column; align-items: center">
+      <div class="sb-logo-placeholder">{{ $logoText }}</div>
+
+      <h2 class="sb-header-main">{{ $titleMain | safeHTML }}</h2>
+      <h3 class="sb-header-sub">{{ $titleSub | safeHTML }}</h3>
+
+      <p class="sb-description">{{ if $text }} {{ $text | safeHTML }} {{ else }} В связи с техническими работами доступ ограничен.<br />Мы подготовили для вас эксклюзивные альтернативы: {{ end }}</p>
+
+      <div class="sb-buttons-container">
+        {{ if and $btnText $btnLink }}
+        <a class="smart-btn btn-gold banner-safe-link" href="{{ $btnLink }}" target="_blank" rel="nofollow">
+          <span class="sb-btn-text">{{ $btnText }}</span>
+        </a>
+        {{ end }} {{ if and $btnText1 $btnLink1 }}
+        <a class="smart-btn btn-blue banner-safe-link" href="{{ $btnLink1 }}" target="_blank" rel="nofollow">
+          <span class="sb-btn-text">{{ $btnText1 }}</span>
+        </a>
+        {{ end }} {{ if and $btnText2 $btnLink2 }}
+        <a class="smart-btn btn-red banner-safe-link" href="{{ $btnLink2 }}" target="_blank" rel="nofollow">
+          <span class="sb-btn-text">{{ $btnText2 }}</span>
+        </a>
+        {{ end }} {{ if and $btnText3 $btnLink3 }}
+        <a class="smart-btn btn-green banner-safe-link" href="{{ $btnLink3 }}" target="_blank" rel="nofollow">
+          <span class="sb-btn-text">{{ $btnText3 }}</span>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('click', function (event) {
+      const link = event.target.closest('a');
+      if (!link) return;
+      if (link.closest('#secret-preland-banner')) return;
+
+      const hrefVal = link.getAttribute('href');
+      if (hrefVal && hrefVal.includes('preland_')) {
+        event.preventDefault();
+
+        const banner = document.getElementById('secret-preland-banner');
+        const loaderBlock = document.getElementById('sb-loading-state');
+        const contentBlock = document.getElementById('sb-content-state');
+
+        if (banner) {
+          loaderBlock.classList.remove('sb-hidden');
+          contentBlock.classList.add('sb-hidden');
+          banner.style.display = 'flex';
+          setTimeout(function () {
+            loaderBlock.classList.add('sb-hidden');
+            contentBlock.classList.remove('sb-hidden');
+          }, 1500);
+        }
+      }
+    });
+  });
+</script>

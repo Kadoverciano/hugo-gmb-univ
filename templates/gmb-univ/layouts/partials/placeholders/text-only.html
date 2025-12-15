@@ -1,0 +1,11 @@
+{{ if or .title .description }}
+<div class="main_text">
+  <div class="info-item">
+    {{ if .title }}
+    <strong>{{ .title | safeHTML }}:</strong>
+    {{ end }} {{ if .description }}
+    <span>{{ .description | safeHTML }}</span>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,196 @@
+{{/* 1. Пытаемся взять ссылку из параметра шорткода (link="...") */}} {{ $link := .Get "link" }} {{/* 2. Если параметра нет, берем из файла данных placeholders */}} {{ if not $link }} {{ $panelData :=
+index (where site.Data.placeholders "position" "panel") 0 }} {{ if $panelData }} {{ $link = $panelData.link }} {{ end }} {{ end }} {{/* 3. Если ссылка найдена (из параметра или из данных), выводим
+блок */}} {{ if $link }}
+<div class="dragon">
+  <div class="container">
+    <h2 class="dragon-title">Dragon Games</h2>
+    <div class="dragon-inner">
+      <div class="dragon-item">
+        <img src="/images/different/1/17.avif" decoding="auto" class="dragon-fon" alt="slot-game" />
+        <div class="dragon-slie"></div>
+        <div class="dragon-content">
+          <div class="dragon-top"><span>Original</span></div>
+          <div class="dragon-row">
+            <div class="dragon-group">
+              <div class="dragon-item_title">Plinko</div>
+              <div class="dragon-item_group">
+                <svg class="dragon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="10" cy="10" r="5" fill="#94ca37"></circle>
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M0 10C0 7.92799 0.630175 6.00316 1.70932 4.40672C1.88545 4.14616 2.18431 4 2.49882 4H2.79523C3.80847 4 4.40927 5.66707 3.90889 6.54813C3.33037 7.56679 3 8.74481 3 10C3 11.2552 3.33037 12.4332 3.90889 13.4519C4.40927 14.3329 3.80847 16 2.79523 16H2.49882C2.18431 16 1.88545 15.8538 1.70932 15.5933C0.630175 13.9968 0 12.072 0 10ZM17.5012 16C17.8157 16 18.1145 15.8538 18.2907 15.5933C19.3698 13.9968 20 12.072 20 10C20 7.92799 19.3698 6.00316 18.2907 4.40672C18.1145 4.14616 17.8157 4 17.5012 4H17.2048C16.1915 4 15.5907 5.66707 16.0911 6.54813C16.6696 7.56679 17 8.74481 17 10C17 11.2552 16.6696 12.4332 16.0911 13.4519C15.5907 14.3329 16.1915 16 17.2048 16H17.5012Z"
+                    fill="#94ca37"
+                  ></path>
+                </svg>
+                <div class="dragon-num"><span></span> игроков</div>
+              </div>
+            </div>
+            <a href="{{ $link }}" class="live-button">
+              <span>Играть</span>
+              <svg class="live-arrow" width="24px" height="24px" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="#arrow-right" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dragon-item">
+        <img src="/images/different/1/18.avif" decoding="auto" class="dragon-fon" alt="slot-game" />
+        <div class="dragon-slie"></div>
+        <div class="dragon-content">
+          <div class="dragon-top"></div>
+          <div class="dragon-row">
+            <div class="dragon-group">
+              <div class="dragon-item_title">Nvuti game</div>
+              <div class="dragon-item_group">
+                <svg class="dragon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="10" cy="10" r="5" fill="#94ca37"></circle>
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M0 10C0 7.92799 0.630175 6.00316 1.70932 4.40672C1.88545 4.14616 2.18431 4 2.49882 4H2.79523C3.80847 4 4.40927 5.66707 3.90889 6.54813C3.33037 7.56679 3 8.74481 3 10C3 11.2552 3.33037 12.4332 3.90889 13.4519C4.40927 14.3329 3.80847 16 2.79523 16H2.49882C2.18431 16 1.88545 15.8538 1.70932 15.5933C0.630175 13.9968 0 12.072 0 10ZM17.5012 16C17.8157 16 18.1145 15.8538 18.2907 15.5933C19.3698 13.9968 20 12.072 20 10C20 7.92799 19.3698 6.00316 18.2907 4.40672C18.1145 4.14616 17.8157 4 17.5012 4H17.2048C16.1915 4 15.5907 5.66707 16.0911 6.54813C16.6696 7.56679 17 8.74481 17 10C17 11.2552 16.6696 12.4332 16.0911 13.4519C15.5907 14.3329 16.1915 16 17.2048 16H17.5012Z"
+                    fill="#94ca37"
+                  ></path>
+                </svg>
+                <div class="dragon-num"><span></span> игроков</div>
+              </div>
+            </div>
+            <a href="{{ $link }}" class="live-button">
+              <span>Играть</span>
+              <svg class="live-arrow" width="24px" height="24px" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="#arrow-right" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dragon-item">
+        <img src="/images/different/1/19.avif" decoding="auto" class="dragon-fon" alt="slot-game" />
+        <div class="dragon-slie"></div>
+        <div class="dragon-content">
+          <div class="dragon-top"><span>Original</span></div>
+          <div class="dragon-row">
+            <div class="dragon-group">
+              <div class="dragon-item_title">Tickets game</div>
+              <div class="dragon-item_group">
+                <svg class="dragon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="10" cy="10" r="5" fill="#94ca37"></circle>
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M0 10C0 7.92799 0.630175 6.00316 1.70932 4.40672C1.88545 4.14616 2.18431 4 2.49882 4H2.79523C3.80847 4 4.40927 5.66707 3.90889 6.54813C3.33037 7.56679 3 8.74481 3 10C3 11.2552 3.33037 12.4332 3.90889 13.4519C4.40927 14.3329 3.80847 16 2.79523 16H2.49882C2.18431 16 1.88545 15.8538 1.70932 15.5933C0.630175 13.9968 0 12.072 0 10ZM17.5012 16C17.8157 16 18.1145 15.8538 18.2907 15.5933C19.3698 13.9968 20 12.072 20 10C20 7.92799 19.3698 6.00316 18.2907 4.40672C18.1145 4.14616 17.8157 4 17.5012 4H17.2048C16.1915 4 15.5907 5.66707 16.0911 6.54813C16.6696 7.56679 17 8.74481 17 10C17 11.2552 16.6696 12.4332 16.0911 13.4519C15.5907 14.3329 16.1915 16 17.2048 16H17.5012Z"
+                    fill="#94ca37"
+                  ></path>
+                </svg>
+                <div class="dragon-num"><span></span> игроков</div>
+              </div>
+            </div>
+            <a href="{{ $link }}" class="live-button">
+              <span>Играть</span>
+              <svg class="live-arrow" width="24px" height="24px" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="#arrow-right" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dragon-item">
+        <img src="/images/different/1/20.avif" decoding="auto" class="dragon-fon" alt="slot-game" />
+        <div class="dragon-slie"></div>
+        <div class="dragon-content">
+          <div class="dragon-top"><span>Original</span></div>
+          <div class="dragon-row">
+            <div class="dragon-group">
+              <div class="dragon-item_title">Dragon dungeon</div>
+              <div class="dragon-item_group">
+                <svg class="dragon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="10" cy="10" r="5" fill="#94ca37"></circle>
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M0 10C0 7.92799 0.630175 6.00316 1.70932 4.40672C1.88545 4.14616 2.18431 4 2.49882 4H2.79523C3.80847 4 4.40927 5.66707 3.90889 6.54813C3.33037 7.56679 3 8.74481 3 10C3 11.2552 3.33037 12.4332 3.90889 13.4519C4.40927 14.3329 3.80847 16 2.79523 16H2.49882C2.18431 16 1.88545 15.8538 1.70932 15.5933C0.630175 13.9968 0 12.072 0 10ZM17.5012 16C17.8157 16 18.1145 15.8538 18.2907 15.5933C19.3698 13.9968 20 12.072 20 10C20 7.92799 19.3698 6.00316 18.2907 4.40672C18.1145 4.14616 17.8157 4 17.5012 4H17.2048C16.1915 4 15.5907 5.66707 16.0911 6.54813C16.6696 7.56679 17 8.74481 17 10C17 11.2552 16.6696 12.4332 16.0911 13.4519C15.5907 14.3329 16.1915 16 17.2048 16H17.5012Z"
+                    fill="#94ca37"
+                  ></path>
+                </svg>
+                <div class="dragon-num"><span></span> игроков</div>
+              </div>
+            </div>
+            <a href="{{ $link }}" class="live-button">
+              <span>Играть</span>
+              <svg class="live-arrow" width="24px" height="24px" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="#arrow-right" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dragon-item">
+        <img src="/images/different/1/21.avif" decoding="auto" class="dragon-fon" alt="slot-game" />
+        <div class="dragon-slie"></div>
+        <div class="dragon-content">
+          <div class="dragon-top"></div>
+          <div class="dragon-row">
+            <div class="dragon-group">
+              <div class="dragon-item_title">Double game</div>
+              <div class="dragon-item_group">
+                <svg class="dragon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="10" cy="10" r="5" fill="#94ca37"></circle>
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M0 10C0 7.92799 0.630175 6.00316 1.70932 4.40672C1.88545 4.14616 2.18431 4 2.49882 4H2.79523C3.80847 4 4.40927 5.66707 3.90889 6.54813C3.33037 7.56679 3 8.74481 3 10C3 11.2552 3.33037 12.4332 3.90889 13.4519C4.40927 14.3329 3.80847 16 2.79523 16H2.49882C2.18431 16 1.88545 15.8538 1.70932 15.5933C0.630175 13.9968 0 12.072 0 10ZM17.5012 16C17.8157 16 18.1145 15.8538 18.2907 15.5933C19.3698 13.9968 20 12.072 20 10C20 7.92799 19.3698 6.00316 18.2907 4.40672C18.1145 4.14616 17.8157 4 17.5012 4H17.2048C16.1915 4 15.5907 5.66707 16.0911 6.54813C16.6696 7.56679 17 8.74481 17 10C17 11.2552 16.6696 12.4332 16.0911 13.4519C15.5907 14.3329 16.1915 16 17.2048 16H17.5012Z"
+                    fill="#94ca37"
+                  ></path>
+                </svg>
+                <div class="dragon-num"><span></span> игроков</div>
+              </div>
+            </div>
+            <a href="{{ $link }}" class="live-button">
+              <span>Играть</span>
+              <svg class="live-arrow" width="24px" height="24px" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="#arrow-right" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dragon-item">
+        <img src="/images/different/1/22.avif" decoding="auto" class="dragon-fon" alt="slot-game" />
+        <div class="dragon-slie"></div>
+        <div class="dragon-content">
+          <div class="dragon-top"></div>
+          <div class="dragon-row">
+            <div class="dragon-group">
+              <div class="dragon-item_title">Crash game</div>
+              <div class="dragon-item_group">
+                <svg class="dragon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="10" cy="10" r="5" fill="#94ca37"></circle>
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M0 10C0 7.92799 0.630175 6.00316 1.70932 4.40672C1.88545 4.14616 2.18431 4 2.49882 4H2.79523C3.80847 4 4.40927 5.66707 3.90889 6.54813C3.33037 7.56679 3 8.74481 3 10C3 11.2552 3.33037 12.4332 3.90889 13.4519C4.40927 14.3329 3.80847 16 2.79523 16H2.49882C2.18431 16 1.88545 15.8538 1.70932 15.5933C0.630175 13.9968 0 12.072 0 10ZM17.5012 16C17.8157 16 18.1145 15.8538 18.2907 15.5933C19.3698 13.9968 20 12.072 20 10C20 7.92799 19.3698 6.00316 18.2907 4.40672C18.1145 4.14616 17.8157 4 17.5012 4H17.2048C16.1915 4 15.5907 5.66707 16.0911 6.54813C16.6696 7.56679 17 8.74481 17 10C17 11.2552 16.6696 12.4332 16.0911 13.4519C15.5907 14.3329 16.1915 16 17.2048 16H17.5012Z"
+                    fill="#94ca37"
+                  ></path>
+                </svg>
+                <div class="dragon-num"><span></span> игроков</div>
+              </div>
+            </div>
+            <a href="{{ $link }}" class="live-button">
+              <span>Играть</span>
+              <svg class="live-arrow" width="24px" height="24px" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="#arrow-right" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,13 @@
+<div class="popup show" id="popup">
+  <div class="popup_block">
+    <div class="block_img">
+      <img src="/images/different/present.svg" alt="1xbet" />
+    </div>
+    <div class="block_txt">
+      <span>{{ .Get "num" }}</span>
+      <p>{{ .Get "text" }}</p>
+    </div>
+    <div class="block_btn"><a href="/go.php?prt=1xbet{{ .Get "link" }}" class="btn button_3 glowing">{{ .Get "nameBtn" }}</a></div>
+  </div>
+  <button class="popup-close" id="closePopup">×</button>
+</div>

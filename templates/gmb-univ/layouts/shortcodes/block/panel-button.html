@@ -1,0 +1,78 @@
+{{ $panelData := index (where site.Data.placeholders "position" "panel") 0 }} {{ with $panelData }}
+<div class="panel">
+  <div class="panel-item">
+    <a href="{{ .link }}" class="panel-link">
+      <svg data-v-1583c0ce="" width="24px" height="24px" xmlns="http://www.w3.org/2000/svg">
+        <use xlink:href="#plinko-game" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+      </svg>
+    </a>
+    <a href="{{ .link }}" class="panel-link">
+      <svg data-v-1583c0ce="" width="24px" height="24px" xmlns="http://www.w3.org/2000/svg">
+        <use xlink:href="#tickets-game" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+      </svg>
+    </a>
+    <a href="{{ .link }}" class="panel-link">
+      <svg data-v-1583c0ce="" width="24px" height="24px" xmlns="http://www.w3.org/2000/svg">
+        <use xlink:href="#dragon-game" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+      </svg>
+    </a>
+    <a href="{{ .link }}" class="panel-link">
+      <svg data-v-1583c0ce="" width="24px" height="24px" xmlns="http://www.w3.org/2000/svg">
+        <use xlink:href="#live-games" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+      </svg>
+    </a>
+    <a href="{{ .link }}" class="panel-link">
+      <svg data-v-1583c0ce="" width="24px" height="24px" xmlns="http://www.w3.org/2000/svg">
+        <use xlink:href="#double-game" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+      </svg>
+    </a>
+    <a href="{{ .link }}" class="panel-link">
+      <svg data-v-1583c0ce="" width="24px" height="24px" xmlns="http://www.w3.org/2000/svg">
+        <use xlink:href="#crash-game" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+      </svg>
+    </a>
+    <a href="{{ .link }}" class="panel-link">
+      <svg data-v-1583c0ce="" width="24px" height="24px" xmlns="http://www.w3.org/2000/svg">
+        <use xlink:href="#nvuti-game" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+      </svg>
+    </a>
+    <a href="{{ .link }}" class="panel-link">
+      <svg data-v-1583c0ce="" width="24px" height="24px" xmlns="http://www.w3.org/2000/svg">
+        <use xlink:href="#slots-games" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+      </svg>
+    </a>
+  </div>
+  <div class="panel-item">
+    <a href="{{ .link }}" class="panel-link">
+      <svg width="24px" height="24px" xmlns="http://www.w3.org/2000/svg">
+        <use xlink:href="#support-agent" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+      </svg>
+    </a>
+    <a href="{{ .link }}" class="panel-link">
+      <svg data-v-1583c0ce="" width="24px" height="24px" xmlns="http://www.w3.org/2000/svg">
+        <use xlink:href="#telegram" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+      </svg>
+    </a>
+    <a href="{{ .link }}" class="panel-link">
+      <svg data-v-1583c0ce="" width="24px" height="24px" xmlns="http://www.w3.org/2000/svg">
+        <use xlink:href="#vk" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+      </svg>
+    </a>
+    <a href="{{ .link }}" class="panel-link">
+      <svg data-v-1583c0ce="" width="24px" height="24px" xmlns="http://www.w3.org/2000/svg">
+        <use xlink:href="#noty" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+      </svg>
+    </a>
+    <a href="{{ .link }}" class="panel-link">
+      <svg data-v-1583c0ce="" width="24px" height="24px" xmlns="http://www.w3.org/2000/svg">
+        <use xlink:href="#audio" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+      </svg>
+    </a>
+    <button class="panel-link toogle-btn">
+      <svg data-v-1583c0ce="" width="24px" height="24px" xmlns="http://www.w3.org/2000/svg">
+        <use xlink:href="#sun" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+      </svg>
+    </button>
+  </div>
+</div>
+{{ end }}

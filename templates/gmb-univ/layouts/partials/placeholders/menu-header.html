@@ -1,0 +1,39 @@
+<nav class="main-nav_menu" role="navigation">
+  <ul class="menu" id="mobile-menu">
+    {{/* Получаем только элементы верхнего уровня */}} {{ $menu_items := where site.Data.placeholders "type" "menu-item" }} {{ $menu_items := where $menu_items "position" "menu-header" }} {{
+    $sorted_menu := sort $menu_items "weight" }} {{ range $sorted_menu }} {{ $active := eq $.Page.RelPermalink .link }} {{ $hasChildren := .children }}
+    <li class="menu-item{{ if $active }} active{{ end }} {{ if $hasChildren }}has-sub-menu{{ end }}">
+      <a href="{{ .link | relURL }}">{{ .title }}</a>
+
+      {{/* Если есть дети, создаем выпадающее меню */}} {{ if $hasChildren }}
+      <ul class="sub-menu">
+        {{ range .children }} {{ $hasGrandChildren := .children }}
+
+        <li class="{{ if $hasGrandChildren }}has-sub-menu{{ end }}">
+          <a href="{{ .link | relURL }}">{{ .title }}</a>
+
+          {{/* Если есть внуки, создаем 3-й уровень */}} {{ if $hasGrandChildren }}
+          <ul class="sub-menu">
+            {{ range .children }}
+            <li>
+              <a href="{{ .link | relURL }}">{{ .title }}</a>
+            </li>
+            {{ end }}
+          </ul>
+          {{ end }}
+        </li>
+        {{ end }}
+      </ul>
+      {{ end }}
+    </li>
+    {{ end }}
+
+    <button class="nbtn-close nbtn-close-white d-lg-none"></button>
+  </ul>
+</nav>
+
+<div class="header-trigger-wrapper d-flex d-lg-none align-items-center">
+  <div class="header-trigger me-4">
+    <span></span>
+  </div>
+</div>

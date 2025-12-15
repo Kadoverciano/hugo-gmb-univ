@@ -1,0 +1,4 @@
+{{/* --- Содержимое файла layouts/shortcodes/block.html --- */}} {{/* 1. Получаем ID позиции, который вы передали (например, "main-1") */}} {{ $position_id := .Get 0 }} {{/* 2. Получаем контекст
+текущей страницы (это важно!) */}} {{ $current_page := .Page }} {{/* 3. Вызываем наш "умный" проверщик, передавая ему страницу и ID */}} {{ if partial "placeholder-exists.html" (dict "page"
+$current_page "position" $position_id) }} {{/* 4. Если проверка прошла, вызываем наш "умный" диспетчер */}} {{ partial "placeholder.html" (dict "page" $current_page "position" $position_id) }} {{ end
+}}

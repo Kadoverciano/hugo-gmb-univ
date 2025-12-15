@@ -1,0 +1,10 @@
+<nav class="main-nav_footer" role="navigation">
+  <ul class="footer-links d-flex flex-wrap justify-content-center">
+    {{ $menu_items := where site.Data.placeholders "type" "menu-item" }} {{ $menu_items := where $menu_items "position" "menu-footer" }} {{ $sorted_menu := sort $menu_items "weight" }} {{ range
+    $sorted_menu }} {{ $active := eq $.Page.RelPermalink .link }}
+    <li class="menu-item{{ if $active }} active{{ end }}">
+      <a href="{{ .link | relURL }}">{{ .title }}</a>
+    </li>
+    {{ end }}
+  </ul>
+</nav>

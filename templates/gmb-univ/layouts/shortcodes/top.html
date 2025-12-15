@@ -1,0 +1,22 @@
+
+{{ $bg_image_path := .Get "bg" | default "/images/casinous/inner-banner/bg2.jpg" }}
+{{ $bg_image := $bg_image_path | relURL }}
+
+<section class="inner-banner bg_img" style="background: url('{{ $bg_image }}') top">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 col-xl-6 text-center">
+        
+        <h1 class="title text-white">{{ .Get "title" }}</h1>
+        
+        <ul class="breadcrumbs d-flex flex-wrap align-items-center justify-content-center">
+          
+          <li><a href="{{ "/" | relURL }}">{{ .Get "breadcrumbs-1" }}</a></li>
+          
+          <li>{{ .Get "breadcrumbs-2" }}</li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

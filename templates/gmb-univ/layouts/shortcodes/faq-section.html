@@ -1,0 +1,22 @@
+{{ $bg_image_path := .Get "img-faq" | default "/images/casinous/faq/shape.png" }}
+{{ $bg_image := $bg_image_path | relURL }}
+
+<section class="faq-section padding-top padding-bottom overflow-hidden">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 col-xl-6">
+        <div class="section-header text-center">
+          <h2 class="section-header__title">{{ .Get "title" }}</h2>
+          <p>{{ .Get "desc" }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-wrapper row justify-content-between">
+      <div class="col-lg-12">
+        {{ .Inner }}
+      </div>
+    </div>
+  </div>
+  <div class="shapes"><img src="{{ $bg_image }}" alt="faq" class="shape shape1" /></div>
+</section>

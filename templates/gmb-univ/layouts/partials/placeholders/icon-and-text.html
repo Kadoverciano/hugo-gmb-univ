@@ -1,0 +1,14 @@
+<div class="main_text">
+  <div class="contact-item">
+    {{ if .imageUrl }}
+    <img src="{{ .imageUrl }}" alt="" />
+    {{ end }}
+    <div>
+      {{ if .title }}
+      <strong>{{ .title | safeHTML }}</strong>
+      {{ end }} {{ if .description }}
+      <span>{{ .description | safeHTML }}</span>
+      {{ end }}
+    </div>
+  </div>
+</div>

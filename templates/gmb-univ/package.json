@@ -1,0 +1,41 @@
+{
+  "name": "@sergey-fufaev/gmb-univ",
+  "description": "Custom Hugo theme GMB V1",
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": "https://github.com/sergey-fufaev/gmb-univ",
+  "author": "Sergey Fufaev",
+  "contributors": [],
+  "bugs": "https://github.com/sergey-fufaev/gmb-univ/issues",
+  "homepage": "https://github.com/sergey-fufaev/gmb-univ",
+  "keywords": [
+    "hugo",
+    "theme",
+    "gmb",
+    "responsive",
+    "custom"
+  ],
+  "dependencies": {
+    "cssnano": "7.0.6",
+    "postcss": "8.4.47",
+    "postcss-preset-env": "10.0.5",
+    "tachyons": "4.12.0"
+  },
+  "devDependencies": {
+    "@davidsneighbour/release-config": "2024.3.46",
+    "@davidsneighbour/tools": "2024.3.46"
+  },
+  "scripts": {
+    "deploy": "cd exampleSite && hugo",
+    "release": "wireit",
+    "release:pre": "wireit"
+  },
+  "wireit": {
+    "release": {
+      "command": "commit-and-tag-version --sign -a -t \"v\" --releaseCommitMessageFormat \"chore(release): v{{currentTag}}\" -- --no-verify"
+    },
+    "release:pre": {
+      "command": "commit-and-tag-version --sign -a -t \"v\" --releaseCommitMessageFormat \"chore(release): v{{currentTag}}\" --prerelease prerelease -- --no-verify"
+    }
+  }
+}

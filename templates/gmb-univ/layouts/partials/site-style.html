@@ -1,0 +1,74 @@
+{{/* --- 1. Подключаем фавикон --- */}}
+<link rel="icon" type="image/png" href="{{ "/images/favicon.png" | relURL }}" sizes="16x16" />
+
+{{/* --- 2. Загружаем данные о цветах из data/theme.json --- */}}
+{{ $theme := site.Data.theme }}
+
+{{/* 3. Проверяем, нашлись ли данные, и вставляем их в :root */}}
+{{ with $theme }}
+<style>
+  :root {
+    --background-f: {{ .background_f }};
+    --background-f2: {{ .background_f2 }};
+    --background-f3: {{ .background_f3 }};
+    --color-text: {{ .color_text }};
+    --background-preloader: {{ .background_preloader }};
+    --btn: {{ .btn }};
+    --btn-color: {{ .btn_color }};
+
+
+    /* header */
+    --header-background: {{ .header-background }};
+    --header-color-logo: {{ .header-color-logo }};
+    --header-color-menu: {{ .header-color-menu }};
+    --header-btn: {{ .header-btn }};
+
+    /* body */
+
+
+    /* footer */
+    --footer-background-1: {{ .footer-background-1 }};
+    --footer-background-2: {{ .footer-background-2 }};
+
+    --footer-color-1: {{ .footer-color-1 }};
+
+    --footer-color-logo: {{ .footer-color-logo }};
+
+    --footer-color-copyright: {{ .footer-color-copyright }};
+
+    --footer-background-limit: {{ .footer-background-limit }};
+
+
+    /* button */
+    --button-background-1: {{ .button-background-1 }};
+    --button-color-1: {{ .button-color-1 }};
+    --button-border-1: {{ .button-border-1 }};
+    --button-hover-1: {{ .button-hover-1 }};
+
+    --button-background-2: {{ .button-background-2 }};
+    --button-color-2: {{ .button-color-2 }};
+    --button-border-2: {{ .button-border-2 }};
+    --button-hover-2: {{ .button-hover-2 }};
+
+
+    /* blocks */
+  }
+</style>
+{{ end }}
+
+{{/* --- 4. Подключаем все остальные CSS-файлы --- */}}
+
+<link rel="stylesheet" href="{{ "/css/lib/bootstrap.min.css" | relURL }}" />
+<link rel="stylesheet" href="{{ "/css/all.min.css" | relURL }}" />
+<link rel="stylesheet" href="{{ "/css/line-awesome.min.css" | relURL }}" />
+<link rel="stylesheet" href="{{ "/css/lib/animate.css" | relURL }}" />
+<link rel="stylesheet" href="{{ "/css/lib/slick.css" | relURL }}" />
+
+{{/* --- 5. Подключаем ваш главный SCSS/CSS --- */}}
+{{ $styles := resources.Get "css/main.scss" | toCSS | minify }}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
+
+{{/* --- 6. Подключаем кастомные CSS из config.toml --- */}}
+{{ range .Site.Params.custom_css }}
+<link rel="stylesheet" href="{{ . | relURL }}" />
+{{ end }}

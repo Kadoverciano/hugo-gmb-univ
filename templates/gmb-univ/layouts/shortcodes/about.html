@@ -1,0 +1,23 @@
+<section class="about-section padding-top padding-bottom overflow-hidden">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <div class="about-content">
+          <div class="section-header">
+            <h2 class="section-header__title">{{ .Get "title" }}</h2>
+            <p>{{ .Get "desc" }}</p>
+          </div>
+          <a href="{{ .Get "link" }}" class="cmn--btn active">{{ .Get "name" }}</a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="aobut-thumb section-thumb">
+          <img src="{{ .Get "link-img-1" }}" alt="about" class="ms-lg-5" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="shapes">
+    <img src="{{ .Get "link-img-2" }}" alt="about" class="shape shape1" />
+  </div>
+</section>

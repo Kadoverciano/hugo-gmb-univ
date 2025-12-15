@@ -1,0 +1,15 @@
+{{ $bg_image_path := .Get "bg" | default "/images/casinous/game/bg3.jpg" }} {{ $bg_image := $bg_image_path | relURL }}
+
+<section class="game-section padding-top padding-bottom bg_img" style="background: url('{{ $bg_image }}')">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-xl-5">
+        <div class="section-header text-center">
+          <h2 class="section-header__title">{{ .Get "title" }}</h2>
+          <p>{{ .Get "desc" }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row gy-4 justify-content-center">{{ .Inner }}</div>
+  </div>
+</section>
