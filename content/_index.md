@@ -12,6 +12,8 @@ footer_type: 'v3'
 
 {{< one-block title="1xbet официальный сайт и рабочее зеркало 1хбет" desc="------------" name-1="Play" link-1="#1" name-2="Sing Up" link-2="#2" link-img-1="/images/casinous/banner/card.png" link-img-2="/images/casinous/banner/thumb.png" >}}
 
+<!-- ./Конец Первый блок -->
+
 {{< smart_banner text="Эксклюзивный бонус для <br> фанатов Dragon!" btn_link="#1" btn_text="1xbet" btn_link1="#2" btn_text1="Dragon" btn_link2="#3" btn_text2="Money" btn_link3="#4" btn_text3="7k" >}}
 
 {{< block/casino link="/go.php?prt=1xbet" >}}

@@ -1,0 +1,444 @@
+/* ==========================================================================
+   CUSTOM THEME: DEEP SPACE & ELECTRIC CYAN (MODERN VEGAS)
+   Концепция: Современное, технологичное казино.
+   Цвета: Глубокий индиго + Электрик.
+   ========================================================================== */
+
+:root {
+  /* --- ПАЛИТРА (Deep Space) --- */
+  --c-bg-body: #0b0e17; /* Почти черный с синим отливом */
+  --c-bg-card: #151a28; /* Глубокий темно-синий для блоков */
+  --c-bg-card-hover: #1e2538; /* Ховер */
+
+  /* Акцент: Электрический градиент (Cyan to Blue) */
+  --c-accent: #00d2ff; /* Яркий голубой */
+  --c-accent-sec: #3a7bd5; /* Синий */
+  --c-accent-gradient: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+  --c-accent-glow: rgba(0, 210, 255, 0.4);
+
+  --c-text-main: #ffffff; /* Белый */
+  --c-text-muted: #94a3b8; /* Холодный серый */
+
+  /* --- ДЕКОР --- */
+  --border-light: 1px solid rgba(255, 255, 255, 0.08);
+  --border-active: 1px solid rgba(0, 210, 255, 0.5);
+  --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.6);
+  --shadow-neon: 0 0 20px rgba(0, 210, 255, 0.2);
+  --radius-main: 16px;
+}
+
+/* ==========================================================================
+   1. ГЛОБАЛЬНЫЕ СТИЛИ
+   ========================================================================== */
+body {
+  background-color: var(--c-bg-body) !important;
+  /* Легкий фоновый градиент для глубины */
+  background-image: radial-gradient(circle at 50% 0%, #1e2746 0%, #0b0e17 60%) !important;
+  color: var(--c-text-main) !important;
+}
+
+/* Заголовки */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.title,
+.section-header__title {
+  color: #ffffff !important;
+  text-transform: uppercase !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.5px !important;
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Акцентные слова в тексте (Голубые) */
+.banner-content__title span,
+.text-gold,
+.highlight {
+  color: var(--c-accent) !important;
+  background: none !important;
+  -webkit-text-fill-color: initial !important;
+  text-shadow: 0 0 15px var(--c-accent-glow) !important;
+}
+
+/* Линия под заголовками */
+.section-header h2::after,
+.section-header__title::after {
+  background: var(--c-accent) !important;
+  box-shadow: 0 0 10px var(--c-accent-glow);
+}
+
+p,
+li,
+span {
+  color: var(--c-text-muted) !important;
+}
+
+a {
+  color: var(--c-text-main) !important;
+  text-decoration: none !important;
+  transition: 0.3s;
+}
+a:hover {
+  color: var(--c-accent) !important;
+  text-shadow: 0 0 10px var(--c-accent-glow);
+}
+
+/* Текстовые блоки - без фона */
+.main_text,
+.info-item,
+.section-header,
+.about-content {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* ==========================================================================
+   2. ШАПКА И МЕНЮ (ТОЛЬКО ЦВЕТА)
+   ========================================================================== */
+.header {
+  background: rgba(11, 14, 23, 0.85) !important; /* Полупрозрачный темный */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(12px);
+}
+
+.header.sticky {
+  background: #0b0e17 !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5) !important;
+  border-bottom: 1px solid rgba(0, 210, 255, 0.1) !important;
+}
+
+/* Ссылки меню */
+.main-nav_menu .menu li a {
+  color: #fff !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.main-nav_menu .menu li a:hover,
+.main-nav_menu .menu li.active a {
+  color: var(--c-accent) !important;
+  text-shadow: 0 0 12px var(--c-accent-glow);
+}
+
+/* Выпадающее меню */
+.main-nav_menu .sub-menu {
+  background: var(--c-bg-card) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: var(--shadow-card) !important;
+}
+.main-nav_menu .sub-menu li a {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  color: var(--c-text-muted) !important;
+}
+.main-nav_menu .sub-menu li a:hover {
+  background: var(--c-bg-card-hover) !important;
+  color: #fff !important;
+  padding-left: 15px !important;
+}
+
+/* Мобильное меню */
+@media (max-width: 991px) {
+  #mobile-menu {
+    background: var(--c-bg-body) !important;
+    border-right: 1px solid var(--c-accent) !important;
+  }
+  #mobile-menu li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  }
+  .nbtn-close {
+    color: #fff !important;
+    opacity: 0.8 !important;
+  }
+  /* Бургер */
+  .header-trigger span,
+  .header-trigger span::before,
+  .header-trigger span::after {
+    background-color: var(--c-accent) !important;
+  }
+}
+
+/* ==========================================================================
+   3. КНОПКИ (Modern Gradients)
+   ========================================================================== */
+.cmn--btn,
+.btn,
+.btn--primary,
+.btn--base,
+.button-shortcode,
+.button1 {
+  background: var(--c-accent-gradient) !important;
+  color: #fff !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  border: none !important;
+  border-radius: 6px !important; /* Чуть менее скругленные, более "техно" */
+  box-shadow: 0 4px 20px rgba(0, 210, 255, 0.25) !important;
+  padding: 14px 40px !important;
+  transition: 0.3s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.cmn--btn:hover,
+.btn:hover,
+.button1:hover {
+  box-shadow: 0 0 30px rgba(0, 210, 255, 0.6) !important;
+  transform: translateY(-2px) !important;
+  filter: brightness(1.1);
+}
+
+/* Вторичные кнопки (Outline) */
+.btn--secondary,
+.button2 {
+  background: transparent !important;
+  border: 2px solid var(--c-accent) !important;
+  color: var(--c-accent) !important;
+  box-shadow: 0 0 10px rgba(0, 210, 255, 0.1) !important;
+  border-radius: 6px !important;
+}
+.btn--secondary:hover,
+.button2:hover {
+  background: var(--c-accent) !important;
+  color: #fff !important;
+  box-shadow: 0 0 20px rgba(0, 210, 255, 0.4) !important;
+}
+
+/* ==========================================================================
+   4. БАННЕР (HERO)
+   ========================================================================== */
+.banner-section {
+  background: transparent !important;
+}
+.banner-content__title {
+  color: #fff !important;
+  text-shadow: 0 0 20px rgba(0, 210, 255, 0.3) !important;
+}
+.banner-content__subtitle {
+  color: var(--c-text-muted) !important;
+  font-size: 1.2rem !important;
+}
+
+/* ==========================================================================
+   5. POPUP (ЦВЕТА И СТИЛЬ)
+   ========================================================================== */
+.popup {
+  /* Только затемнение фона (если есть оверлей) */
+
+  background: var(--c-bg-card) !important;
+  border: 1px solid var(--c-accent) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 0 50px rgba(0, 210, 255, 0.2) !important;
+  width: inherit;
+}
+
+/* Цифра бонуса */
+.popup_block .block_txt span {
+  font-size: 4rem !important;
+  font-weight: 900 !important;
+  background: var(--c-accent-gradient) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: drop-shadow(0 0 10px rgba(0, 210, 255, 0.3));
+}
+
+.popup_block .block_txt p {
+  color: #fff !important;
+  letter-spacing: 1px;
+}
+
+.popup_block .block_btn .btn {
+  width: 100% !important;
+  font-size: 1.2rem !important;
+}
+
+.popup-close {
+  color: var(--c-text-muted) !important;
+  opacity: 0.7;
+}
+.popup-close:hover {
+  color: var(--c-accent) !important;
+  opacity: 1;
+  transform: rotate(90deg);
+}
+
+/* ==========================================================================
+   6. КАРТОЧКИ (GAMES & INFO)
+   ========================================================================== */
+.game-item,
+.game-item-2,
+.feature,
+.why-item {
+  background: var(--c-bg-card) !important;
+  border: var(--border-light) !important;
+  border-radius: var(--radius-main) !important;
+  box-shadow: var(--shadow-card) !important;
+  transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  overflow: hidden !important;
+  padding: 10px;
+}
+
+/* Ховер эффект: Подсветка границ и свечение */
+.game-item:hover,
+.game-item-2:hover,
+.feature:hover,
+.why-item:hover {
+  border-color: var(--c-accent) !important;
+  box-shadow: var(--shadow-neon) !important;
+  transform: translateY(-5px);
+  background: var(--c-bg-card-hover) !important;
+}
+
+.game-content .title,
+.game-title,
+.feature h3,
+.why-item__content .title {
+  color: #fff !important;
+  font-weight: 700 !important;
+}
+
+/* Иконки в блоке преимуществ */
+.feature i {
+  color: var(--c-accent) !important;
+  text-shadow: 0 0 15px var(--c-accent-glow);
+  font-size: 3.5rem !important;
+}
+
+/* ==========================================================================
+   7. ТАБЛИЦЫ И FAQ
+   ========================================================================== */
+/* Таблицы */
+table {
+  background: var(--c-bg-card) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: var(--radius-main) !important;
+  box-shadow: var(--shadow-card) !important;
+  overflow: hidden;
+}
+
+thead th {
+  background: #101320 !important;
+  color: var(--c-accent) !important;
+  border-bottom: 1px solid rgba(0, 210, 255, 0.2) !important;
+  padding: 20px !important;
+  font-size: 0.9rem !important;
+  letter-spacing: 1px;
+}
+
+tbody td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03) !important;
+  color: #e2e8f0 !important;
+}
+
+tbody tr:hover {
+  background: rgba(0, 210, 255, 0.05) !important; /* Легкая голубая подсветка */
+}
+
+tbody td:first-child {
+  color: var(--c-accent) !important;
+  font-weight: 700;
+}
+
+/* FAQ */
+.faq-item {
+  background: var(--c-bg-card) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: 8px !important;
+  margin-bottom: 15px !important;
+}
+
+.faq-title {
+  color: #fff !important;
+  font-weight: 600 !important;
+  background: transparent !important;
+}
+
+.faq-title::after {
+  color: var(--c-accent) !important;
+  text-shadow: 0 0 10px var(--c-accent-glow);
+}
+
+.faq-content {
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+  background: rgba(0, 0, 0, 0.2) !important;
+  color: #cbd5e1 !important;
+}
+
+/* ==========================================================================
+   8. PLACEHOLDERS (Logo, Icons, etc.)
+   ========================================================================== */
+.contact-item strong {
+  color: #fff !important;
+}
+.contact-item span {
+  color: var(--c-text-muted) !important;
+}
+
+/* Иконки: красим в ярко-голубой через фильтр */
+.contact-item img {
+  filter: brightness(0) saturate(100%) invert(87%) sepia(21%) saturate(6723%) hue-rotate(172deg) brightness(101%) contrast(104%) !important;
+  drop-shadow: 0 0 5px var(--c-accent-glow);
+}
+
+.logo-text {
+  color: #fff !important;
+}
+/* Логотип: делаем белым с голубым отливом */
+.logo img {
+  filter: brightness(0) saturate(100%) invert(100%) drop-shadow(0 0 2px var(--c-accent)) !important;
+}
+
+/* Smart Banner */
+.smart-banner {
+  background: linear-gradient(90deg, #151a28 0%, #0e121d 100%) !important;
+  border-top: 1px solid var(--c-accent) !important;
+  border-bottom: 1px solid var(--c-accent) !important;
+  box-shadow: 0 0 20px rgba(0, 210, 255, 0.1) !important;
+}
+
+/* Поля ввода */
+input,
+textarea,
+.form--control {
+  background: #0f131f !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #fff !important;
+  border-radius: 6px !important;
+}
+input:focus,
+.form--control:focus {
+  border-color: var(--c-accent) !important;
+  box-shadow: 0 0 10px rgba(0, 210, 255, 0.2) !important;
+}
+
+/* ==========================================================================
+   9. FOOTER
+   ========================================================================== */
+.footer-section {
+  background: #06080e !important; /* Самый темный оттенок */
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+  margin-top: 60px !important;
+}
+
+.footer-menu li a {
+  color: #64748b !important;
+}
+.footer-menu li a:hover {
+  color: var(--c-accent) !important;
+}
+
+.copyright {
+  color: #475569 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.03) !important;
+}
+
+.footer-logo img {
+  filter: grayscale(100%) opacity(0.5) !important;
+}

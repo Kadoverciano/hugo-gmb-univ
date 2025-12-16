@@ -1,0 +1,486 @@
+/* ==========================================================================
+   CUSTOM THEME: REVERSE INDUSTRIAL (YELLOW BODY / BLACK BLOCKS)
+   Концепция: Желтый фон сайта, Черные блоки, Высокий контраст.
+   ========================================================================== */
+
+:root {
+  /* --- ПАЛИТРА --- */
+  --c-bg-body: #ffc107; /* Яркий желтый (фон сайта) */
+  --c-bg-card: #111111; /* Почти черный (фон блоков) */
+  --c-bg-card-hover: #000000; /* Абсолютно черный (ховер) */
+
+  /* Текст */
+  --c-text-body: #111111; /* Черный текст (на желтом) */
+  --c-text-card: #ffffff; /* Белый текст (на черном) */
+  --c-text-muted: #888888; /* Серый текст */
+
+  /* Декор */
+  --shadow-hard: 5px 5px 0px rgba(0, 0, 0, 0.2); /* Жесткая тень */
+  --radius-main: 8px;
+}
+
+/* ==========================================================================
+   1. ГЛОБАЛЬНЫЕ СТИЛИ (Желтый фон)
+   ========================================================================== */
+body {
+  background-color: var(--c-bg-body) !important;
+  background-image: none !important;
+  color: var(--c-text-body) !important;
+}
+
+/* Заголовки на странице (h1, h2...) - ЧЕРНЫЕ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.section-header__title,
+.banner-content__title {
+  color: #000000 !important;
+  text-transform: uppercase !important;
+  font-weight: 900 !important;
+  text-shadow: none !important;
+  letter-spacing: 1px !important;
+}
+
+/* Линия под заголовками - Черная */
+.section-header h2::after,
+.section-header__title::after {
+  background: #000000 !important;
+  height: 4px !important;
+}
+
+/* Тексты на фоне сайта (p, li) - Черные или темно-серые */
+p,
+li,
+span,
+.banner-content__subtitle {
+  color: #222222 !important;
+  font-weight: 600 !important;
+}
+
+/* Ссылки на фоне сайта */
+a {
+  color: #000000 !important;
+  text-decoration: underline !important;
+  transition: 0.2s;
+}
+a:hover {
+  color: #ffffff !important;
+  background: #000000 !important;
+  text-decoration: none !important;
+}
+
+/* Текстовые блоки (placeholders) - БЕЗ ФОНА */
+.main_text,
+.info-item,
+.section-header,
+.about-content {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* ==========================================================================
+   2. ШАПКА И МЕНЮ (Header) - ЧЕРНЫЕ
+   ========================================================================== */
+.header {
+  background: #111111 !important; /* Черная шапка для контраста */
+  border-bottom: 4px solid #000 !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+.header.sticky {
+  background: #000000 !important;
+}
+
+/* Ссылки меню - Белые */
+.main-nav_menu .menu li a {
+  color: #ffffff !important;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+
+.main-nav_menu .menu li a:hover,
+.main-nav_menu .menu li.active a {
+  color: var(--c-bg-body) !important; /* Желтый при наведении */
+}
+
+/* Выпадающее меню */
+.main-nav_menu .sub-menu {
+  background: #222222 !important;
+  border: 2px solid var(--c-bg-body) !important;
+}
+.main-nav_menu .sub-menu li a {
+  border-bottom: 1px solid #444 !important;
+  color: #cccccc !important;
+}
+.main-nav_menu .sub-menu li a:hover {
+  background: var(--c-bg-body) !important;
+  color: #000 !important; /* Черный текст на желтом фоне */
+  padding-left: 15px !important;
+}
+
+/* Мобильное меню */
+@media (max-width: 991px) {
+  #mobile-menu {
+    background: #111111 !important; /* Черное меню */
+    border-right: 4px solid var(--c-bg-body) !important;
+  }
+  #mobile-menu li {
+    border-bottom: 1px solid #333 !important;
+  }
+  #mobile-menu li a {
+    color: #ffffff !important;
+  }
+  .nbtn-close {
+    color: #ffffff !important;
+    opacity: 1 !important;
+  }
+  /* Бургер - Белый (так как шапка черная) */
+  .header-trigger span,
+  .header-trigger span::before,
+  .header-trigger span::after {
+    background-color: #ffffff !important;
+  }
+}
+
+/* ==========================================================================
+   3. КНОПКИ (BUTTONS) - ЧЕРНЫЕ
+   ========================================================================== */
+.cmn--btn,
+.btn,
+.btn--primary,
+.btn--base,
+.button-shortcode,
+.button1 {
+  background: #000000 !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  border: 2px solid #000000 !important;
+  border-radius: 4px !important;
+  padding: 12px 35px !important;
+  box-shadow: 4px 4px 0px rgba(255, 255, 255, 0.5) !important; /* Белая тень для контраста */
+  transition: 0.2s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+}
+
+.cmn--btn:hover,
+.btn:hover,
+.button1:hover {
+  background: #ffffff !important;
+  color: #000000 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 2px 2px 0px #000 !important;
+}
+
+/* Вторичные кнопки */
+.btn--secondary,
+.button2 {
+  background: transparent !important;
+  border: 3px solid #000000 !important;
+  color: #000000 !important;
+  border-radius: 4px !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+}
+.btn--secondary:hover,
+.button2:hover {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   4. БАННЕР (HERO SECTION)
+   ========================================================================== */
+.banner-section {
+  background: transparent !important;
+}
+
+.banner-content__title {
+  color: #000000 !important;
+}
+
+/* Акцент в заголовке */
+.banner-content__title span {
+  background: #000000 !important;
+  color: var(--c-bg-body) !important; /* Желтый текст на черной плашке */
+  padding: 0 10px;
+  -webkit-text-fill-color: initial !important;
+}
+
+.banner-content__subtitle {
+  color: #333333 !important;
+}
+
+/* ==========================================================================
+   5. POPUP (ЧЕРНЫЙ БЛОК)
+   Только цвета. Позиционирование родное.
+   ========================================================================== */
+.popup {
+  background: #111111 !important;
+  border: 4px solid #000000 !important;
+  border-radius: 12px !important;
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.2) !important;
+  width: inherit;
+}
+
+/* Сам блок - Черный */
+.popup_block {
+}
+
+/* Текст внутри - Желтый и Белый */
+.popup_block .block_txt span {
+  color: var(--c-bg-body) !important; /* Желтая цифра */
+  background: none !important;
+  -webkit-text-fill-color: initial !important;
+  font-weight: 900 !important;
+}
+
+.popup_block .block_txt p {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+/* Кнопка внутри - Желтая */
+.popup_block .block_btn .btn {
+  width: 100% !important;
+  background: var(--c-bg-body) !important;
+  color: #000000 !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+.popup_block .block_btn .btn:hover {
+  background: #ffffff !important;
+}
+
+/* Крестик */
+.popup-close {
+  color: #666 !important;
+}
+.popup-close:hover {
+  color: #fff !important;
+  transform: rotate(90deg);
+}
+
+/* ==========================================================================
+   6. КАРТОЧКИ (GAMES, FEATURES) - ЧЕРНЫЕ
+   Внутри черных карточек текст должен быть белым.
+   ========================================================================== */
+.game-item,
+.game-item-2,
+.feature,
+.why-item {
+  background: var(--c-bg-card) !important;
+  border: 2px solid #000000 !important;
+  border-radius: var(--radius-main) !important;
+  box-shadow: var(--shadow-hard) !important;
+  color: #ffffff !important; /* Белый текст внутри */
+  padding: 15px !important;
+  overflow: hidden;
+}
+
+/* Ховер */
+.game-item:hover,
+.game-item-2:hover,
+.feature:hover,
+.why-item:hover {
+  background: #000000 !important;
+  border-color: #ffffff !important;
+  transform: translateY(-3px) !important;
+}
+
+/* Заголовки ВНУТРИ карточек - Белые */
+.game-content .title,
+.game-title,
+.feature h3,
+.why-item__content .title {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  text-shadow: none !important;
+}
+
+.feature p,
+.why-item__content p {
+  color: #cccccc !important;
+  font-weight: 400 !important;
+}
+
+/* Иконки - Желтые */
+.feature i {
+  color: var(--c-bg-body) !important;
+  font-size: 3rem !important;
+  text-shadow: none !important;
+}
+
+/* ==========================================================================
+   7. ТАБЛИЦЫ И FAQ - ЧЕРНЫЕ
+   ========================================================================== */
+table {
+  background: #111111 !important;
+  color: #ffffff !important;
+  border-radius: var(--radius-main) !important;
+  overflow: hidden;
+  box-shadow: var(--shadow-hard) !important;
+}
+
+thead th {
+  background: #000000 !important;
+  color: var(--c-bg-body) !important; /* Желтый заголовок */
+  border-bottom: 2px solid #333 !important;
+  text-transform: uppercase;
+}
+
+tbody td {
+  border-bottom: 1px solid #333 !important;
+  color: #dddddd !important;
+}
+
+tbody tr:hover {
+  background: #222222 !important;
+}
+
+/* Первый столбец - Желтый */
+tbody td:first-child {
+  color: var(--c-bg-body) !important;
+  font-weight: 700 !important;
+}
+
+/* FAQ */
+.faq-item {
+  background: #111111 !important;
+  border: 2px solid #000000 !important;
+  border-radius: 4px !important;
+  margin-bottom: 10px !important;
+}
+
+.faq-title {
+  color: #ffffff !important; /* Белый вопрос */
+  font-weight: 700 !important;
+  background: transparent !important;
+}
+
+.faq-title::after {
+  color: var(--c-bg-body) !important; /* Желтый плюс */
+  content: '+';
+}
+
+.faq-content {
+  background: #222222 !important;
+  border-top: 1px solid #333 !important;
+  color: #cccccc !important;
+}
+
+/* ==========================================================================
+   8. PLACEHOLDERS (Icons, Logo)
+   ========================================================================== */
+/* Иконки контактов - красим в Черный (так как они на желтом фоне) */
+.contact-item img {
+  filter: brightness(0) !important; /* Делаем черным */
+  opacity: 0.8 !important;
+}
+.contact-item strong {
+  color: #000000 !important;
+}
+.contact-item span {
+  color: #333333 !important;
+}
+
+/* Логотип в хедере (на черном фоне) - Белый */
+.logo-text {
+  color: #ffffff !important;
+}
+.logo img {
+  filter: brightness(0) invert(1) !important;
+}
+
+/* Smart Banner */
+.smart-banner {
+  background: #111111 !important;
+  border-top: 3px solid #000000 !important;
+  border-bottom: 3px solid #000000 !important;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+}
+.smart-banner h3,
+.smart-banner p {
+  color: #ffffff !important;
+}
+
+/* Inputs */
+input,
+textarea,
+.form--control {
+  background: #ffffff !important;
+  border: 2px solid #000000 !important;
+  color: #000000 !important;
+  border-radius: 4px !important;
+}
+input:focus,
+.form--control:focus {
+  background: #fff !important;
+  box-shadow: 4px 4px 0px #000000 !important;
+  border-color: #000 !important;
+}
+
+/* ==========================================================================
+   9. FOOTER - ЧЕРНЫЙ
+   ========================================================================== */
+.footer-section {
+  background: #111111 !important;
+  color: #888 !important;
+  border-top: 4px solid #000000 !important;
+  padding-top: 60px !important;
+  margin-top: 60px !important;
+}
+
+.footer-menu li a {
+  color: #aaaaaa !important;
+}
+.footer-menu li a:hover {
+  color: var(--c-bg-body) !important;
+}
+
+.copyright {
+  color: #666666 !important;
+  border-top: 1px solid #333 !important;
+}
+
+.footer-logo img {
+  filter: brightness(0) invert(1) !important;
+  opacity: 0.5 !important;
+}
+
+.faq-item__title h5 {
+  color: #fff !important;
+}
+
+.faq-item__content p {
+  color: #eee !important;
+}
+
+.game-item__content h4 {
+  color: #fff !important;
+}
+
+.game-item__content p {
+  color: #eee !important;
+}
+
+.dragon-item_title {
+  color: #fff;
+}
+
+.dragon-top span {
+  color: #ffc107 !important;
+}
+
+.dragon-num span,
+.dragon-num {
+  color: #ffc107 !important;
+}

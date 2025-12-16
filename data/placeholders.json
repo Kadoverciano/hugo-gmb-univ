@@ -3,7 +3,8 @@
     "position": "header-1",
     "id_page": "",
     "type": "logo",
-    "imageUrl": "/images/casinous/logo.png",
+    "imageUrl1": "/images/casinous/logo.png",
+    "title": "1XBET",
     "link": "/"
   },
   {
@@ -42,7 +43,7 @@
       },
       {
         "title": "Лицензия",
-        "link": "/info/license/",
+        "link": "#",
         "children": [
           {
             "title": "Curacao",
@@ -141,5 +142,10 @@
     "id_page": "",
     "type": "icon-and-text",
     "title": "<div class='shapes'><img src='/images/casinous/footer/shape.png' alt='footer' class='shape1' /></div>"
+  },
+  {
+    "position": "theme-settings",
+    "type": "config",
+    "color_scheme": "blue"
   }
 ]

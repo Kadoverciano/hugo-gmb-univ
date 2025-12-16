@@ -5,39 +5,5 @@
   "color_text": "#fff",
   "background_preloader": "#2e04ea",
   "btn": "#f90000",
-  "btn_color": "#fff",
-
-
-
-
-  "_comment_header": "Header",
-
-  "header-background": "#000",
-  "header-color-logo": "#fff",
-  "header-btn": "#f90000",
-
-
-
-  "_comment_body": "Body",
-
-
-
-  "_comment_footer": "Footer",
-
-  "footer-background-1": "#eee",
-  "footer-background-2": "#000",
-
-
-
-  "_comment_button": "Button",
-  "button-background-1": "#f90000",
-  "button-color-1": "#fff",
-  "button-border-1": "#f90000",
-  "button-hover-1": 
-
-  "button-background-2": "",
-
-
-
-  "_comment_blocks": "Blocks"
+  "btn_color": "#fff"
 }

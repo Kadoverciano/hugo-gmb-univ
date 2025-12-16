@@ -1,0 +1,435 @@
+/* ==========================================================================
+   CUSTOM THEME: CYBER YELLOW & GRAPHITE (FINAL)
+   Концепция: Высокий контраст, энергия, современный стиль.
+   Цвета: Яркий желтый (#FFD600) на темном графите.
+   ========================================================================== */
+
+:root {
+  /* --- ПАЛИТРА (Cyber Yellow) --- */
+  --c-bg-body: #121212; /* Матовый черный/графит */
+  --c-bg-card: #1e1e1e; /* Темно-серый для блоков */
+  --c-bg-card-hover: #252525; /* Светлее при наведении */
+
+  --c-accent: #ffd600; /* Яркий желтый (Cyber Yellow) */
+  --c-accent-hover: #ffea00; /* Кислотно-желтый (Ховер) */
+  --c-accent-gradient: linear-gradient(135deg, #ffd600 0%, #ffaa00 100%); /* Желто-оранжевый градиент */
+
+  --c-text-main: #ffffff; /* Белый текст */
+  --c-text-muted: #9e9e9e; /* Серый текст */
+  --c-text-inverse: #000000; /* Черный текст (на желтых кнопках) */
+
+  /* --- ДЕКОР --- */
+  --border-light: 1px solid rgba(255, 255, 255, 0.1);
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 15px rgba(255, 214, 0, 0.3); /* Желтое свечение */
+  --radius-main: 8px; /* Чуть более квадратные формы для "техно" стиля */
+}
+
+/* ==========================================================================
+   1. ГЛОБАЛЬНЫЕ СТИЛИ
+   ========================================================================== */
+body {
+  background-color: var(--c-bg-body) !important;
+  background-image: none !important;
+  color: var(--c-text-main) !important;
+}
+
+/* Заголовки */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.title,
+.section-header__title {
+  color: #ffffff !important;
+  text-transform: uppercase !important;
+  font-weight: 800 !important;
+  letter-spacing: 1px !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Акценты в тексте */
+.banner-content__title span,
+.text-gold,
+.highlight,
+.section-header__title::after {
+  color: var(--c-accent) !important;
+  background: none !important;
+  -webkit-text-fill-color: initial !important;
+}
+
+/* Линия под заголовками */
+.section-header h2::after,
+.section-header__title::after {
+  background: var(--c-accent) !important;
+  box-shadow: var(--shadow-glow) !important;
+}
+
+p,
+li,
+span {
+  color: var(--c-text-muted) !important;
+}
+
+a {
+  color: var(--c-text-main) !important;
+  text-decoration: none !important;
+  transition: 0.3s;
+}
+a:hover {
+  color: var(--c-accent) !important;
+}
+
+/* Текстовые блоки - БЕЗ ФОНА */
+.main_text,
+.info-item,
+.section-header,
+.about-content {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* ==========================================================================
+   2. ШАПКА И МЕНЮ (Header)
+   ========================================================================== */
+.header {
+  background: rgba(30, 30, 30, 0.95) !important; /* Графит стекло */
+  border-bottom: 1px solid rgba(255, 214, 0, 0.1) !important; /* Тонкая желтая линия */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+.header.sticky {
+  background: #1e1e1e !important;
+  border-bottom: 1px solid var(--c-accent) !important; /* Яркая линия при скролле */
+}
+
+/* Основное меню */
+.main-nav_menu .menu li a {
+  color: #ffffff !important;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.main-nav_menu .menu li a:hover,
+.main-nav_menu .menu li.active a {
+  color: var(--c-accent) !important;
+}
+
+/* Выпадающее меню */
+.main-nav_menu .sub-menu {
+  background: var(--c-bg-card) !important;
+  border: 1px solid var(--border-light) !important;
+  border-top: 2px solid var(--c-accent) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8) !important;
+}
+.main-nav_menu .sub-menu li a {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  color: var(--c-text-muted) !important;
+}
+.main-nav_menu .sub-menu li a:hover {
+  background: var(--c-bg-card-hover) !important;
+  color: var(--c-accent) !important;
+  padding-left: 15px !important;
+}
+
+/* Мобильное меню */
+@media (max-width: 991px) {
+  #mobile-menu {
+    background: var(--c-bg-body) !important;
+    border-right: 1px solid var(--c-accent) !important;
+  }
+  #mobile-menu li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  }
+  #mobile-menu li a {
+    color: #ffffff !important;
+  }
+  .nbtn-close {
+    color: #ffffff !important;
+    opacity: 1 !important;
+  }
+  /* Бургер */
+  .header-trigger span,
+  .header-trigger span::before,
+  .header-trigger span::after {
+    background-color: var(--c-accent) !important;
+  }
+}
+
+/* ==========================================================================
+   3. КНОПКИ (BUTTONS) - High Contrast
+   ========================================================================== */
+.cmn--btn,
+.btn,
+.btn--primary,
+.btn--base,
+.button-shortcode,
+.button1 {
+  background: var(--c-accent-gradient) !important;
+  color: var(--c-text-inverse) !important; /* Черный текст на желтом */
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(255, 214, 0, 0.2) !important;
+  border-radius: 4px !important; /* Технический стиль */
+  padding: 12px 35px !important;
+  transition: 0.2s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.cmn--btn:hover,
+.btn:hover,
+.button1:hover {
+  background: var(--c-accent-hover) !important; /* Светлее */
+  box-shadow: 0 0 25px rgba(255, 214, 0, 0.5) !important;
+  color: #000 !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Вторичные кнопки (Outline Yellow) */
+.btn--secondary,
+.button2 {
+  background: transparent !important;
+  border: 2px solid var(--c-accent) !important;
+  color: var(--c-accent) !important;
+  border-radius: 4px !important;
+  font-weight: 700 !important;
+}
+.btn--secondary:hover,
+.button2:hover {
+  background: var(--c-accent) !important;
+  color: #000 !important;
+  box-shadow: 0 0 15px rgba(255, 214, 0, 0.3) !important;
+}
+
+/* ==========================================================================
+   4. БАННЕР (HERO SECTION)
+   ========================================================================== */
+.banner-section {
+  background: transparent !important;
+}
+
+.banner-content__title {
+  color: #ffffff !important;
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5) !important;
+}
+
+.banner-content__subtitle {
+  color: #cccccc !important;
+}
+
+/* ==========================================================================
+   5. POPUP (ТОЛЬКО ЦВЕТА)
+   Позиционирование не трогаем!
+   ========================================================================== */
+.popup {
+  background: var(--c-bg-card) !important;
+  border: 2px solid var(--c-accent) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 0 50px rgba(255, 214, 0, 0.2) !important;
+  width: inherit;
+}
+
+/* Блок попапа */
+.popup_block {
+}
+
+/* Текст внутри */
+.popup_block .block_txt span {
+  color: var(--c-accent) !important;
+  background: none !important;
+  -webkit-text-fill-color: initial !important;
+  text-shadow: 0 0 10px rgba(255, 214, 0, 0.3);
+}
+
+.popup_block .block_txt p {
+  color: #ffffff !important;
+}
+
+/* Кнопка */
+.popup_block .block_btn .btn {
+  width: 100% !important;
+  background: var(--c-accent) !important; /* Сплошной желтый */
+}
+
+/* Крестик */
+.popup-close {
+  color: #666 !important;
+}
+.popup-close:hover {
+  color: var(--c-accent) !important;
+}
+
+/* ==========================================================================
+   6. КАРТОЧКИ (GAMES, FEATURES)
+   ========================================================================== */
+.game-item,
+.game-item-2,
+.feature,
+.why-item {
+  background: var(--c-bg-card) !important;
+  border: var(--border-light) !important;
+  border-radius: var(--radius-main) !important;
+  box-shadow: var(--shadow-soft) !important;
+  transition: 0.3s !important;
+  overflow: hidden !important;
+  padding: 15px !important;
+}
+
+/* Ховер */
+.game-item:hover,
+.game-item-2:hover,
+.feature:hover,
+.why-item:hover {
+  border-color: var(--c-accent) !important;
+  background: var(--c-bg-card-hover) !important;
+  box-shadow: var(--shadow-glow) !important;
+  transform: translateY(-5px) !important;
+}
+
+.game-content .title,
+.game-title,
+.feature h3,
+.why-item__content .title {
+  color: #ffffff !important;
+  font-weight: 800 !important;
+}
+
+.feature i {
+  color: var(--c-accent) !important;
+  text-shadow: 0 0 15px rgba(255, 214, 0, 0.4);
+}
+
+/* ==========================================================================
+   7. ТАБЛИЦЫ И FAQ
+   ========================================================================== */
+table {
+  background: var(--c-bg-card) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: var(--radius-main) !important;
+  box-shadow: var(--shadow-soft) !important;
+  color: var(--c-text-main) !important;
+  overflow: hidden;
+}
+
+thead th {
+  background: #1a1a1a !important;
+  color: var(--c-accent) !important;
+  border-bottom: 2px solid rgba(255, 214, 0, 0.2) !important;
+}
+
+tbody td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  color: #dddddd !important;
+}
+
+tbody tr:hover {
+  background: rgba(255, 214, 0, 0.05) !important; /* Желтоватая подсветка */
+}
+
+tbody td:first-child {
+  color: var(--c-accent) !important;
+  font-weight: 700 !important;
+}
+
+/* FAQ */
+.faq-item {
+  background: var(--c-bg-card) !important;
+  border: var(--border-light) !important;
+  border-radius: 4px !important;
+  margin-bottom: 10px !important;
+}
+
+.faq-title {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  background: transparent !important;
+}
+
+.faq-title::after {
+  color: var(--c-accent) !important;
+}
+
+.faq-content {
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+  color: var(--c-text-muted) !important;
+  background: rgba(0, 0, 0, 0.2) !important;
+}
+
+/* ==========================================================================
+   8. PLACEHOLDERS (Icon-text, Logo, etc.)
+   ========================================================================== */
+.contact-item strong {
+  color: #ffffff !important;
+}
+.contact-item span {
+  color: #aaaaaa !important;
+}
+
+/* Иконки: желтый фильтр */
+.contact-item img {
+  filter: brightness(0) saturate(100%) invert(84%) sepia(35%) saturate(3736%) hue-rotate(359deg) brightness(102%) contrast(105%) !important;
+  drop-shadow: 0 0 5px rgba(255, 214, 0, 0.5);
+}
+
+.logo-text {
+  color: #ffffff !important;
+}
+.logo img {
+  /* Белый логотип */
+  filter: brightness(0) invert(1) !important;
+}
+
+/* Smart Banner */
+.smart-banner {
+  background: linear-gradient(90deg, #1e1e1e 0%, #121212 100%) !important;
+  border-top: 2px solid var(--c-accent) !important;
+  border-bottom: 2px solid var(--c-accent) !important;
+  box-shadow: 0 0 20px rgba(255, 214, 0, 0.1) !important;
+}
+
+/* Inputs */
+input,
+textarea,
+.form--control {
+  background: #121212 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #fff !important;
+  border-radius: 4px !important;
+}
+input:focus,
+.form--control:focus {
+  border-color: var(--c-accent) !important;
+  box-shadow: 0 0 10px rgba(255, 214, 0, 0.3) !important;
+}
+
+/* ==========================================================================
+   9. FOOTER
+   ========================================================================== */
+.footer-section {
+  background: #000000 !important; /* Полный черный */
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.footer-menu li a {
+  color: #888888 !important;
+}
+.footer-menu li a:hover {
+  color: var(--c-accent) !important;
+}
+
+.copyright {
+  color: #666666 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.footer-logo img {
+  filter: brightness(0) invert(1) !important;
+  opacity: 0.6 !important;
+}

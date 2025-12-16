@@ -1,0 +1,489 @@
+/* ==========================================================================
+   CUSTOM THEME: PREMIUM GOLD & ROYAL BLUE (FINAL ULTIMATE)
+   Включает: Глобальные стили, Шорткоды, Popup, и папку Placeholders.
+   ========================================================================== */
+
+:root {
+  /* --- ЦВЕТОВАЯ ПАЛИТРА --- */
+  --c-bg-body: #05070a; /* Глубокий черный */
+  --c-bg-card: #151c2f; /* Фон блоков */
+  --c-bg-card-hover: #1b243a; /* Фон блоков (ховер) */
+
+  --c-gold: #cca43b; /* Основное золото */
+  --c-gold-light: #ffd700; /* Яркое золото (текст, иконки) */
+  --c-gold-gradient: linear-gradient(135deg, #b8860b 0%, #ffd700 50%, #b8860b 100%);
+
+  --c-text-main: #e6eaf0; /* Основной белый */
+  --c-text-muted: #8892b0; /* Вторичный серый */
+
+  /* --- ДЕКОР --- */
+  --border-gold: 1px solid rgba(204, 164, 59, 0.3);
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 20px rgba(204, 164, 59, 0.2);
+  --radius-main: 12px;
+}
+
+/* ==========================================================================
+   1. ГЛОБАЛЬНЫЕ СТИЛИ
+   ========================================================================== */
+body {
+  background-color: var(--c-bg-body) !important;
+  background-image: radial-gradient(circle at top center, #1b243a 0%, #05070a 60%) !important;
+  color: var(--c-text-main) !important;
+}
+
+/* Заголовки */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.title,
+.section-header__title {
+  color: #fff !important;
+  text-transform: uppercase !important;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Золотые акценты */
+.banner-content__title span,
+.text-gold,
+.highlight {
+  color: var(--c-gold-light) !important;
+  background: none !important;
+  -webkit-text-fill-color: initial !important;
+}
+
+p,
+li,
+span {
+  color: var(--c-text-muted) !important;
+}
+
+a {
+  color: var(--c-text-main) !important;
+  text-decoration: none !important;
+  transition: 0.3s;
+}
+a:hover {
+  color: var(--c-gold-light) !important;
+}
+
+/* ==========================================================================
+   2. HEADER & MENU (UPDATED)
+   Полная стилизация меню, включая выпадающие списки и мобильную версию.
+   ========================================================================== */
+.header {
+  background: rgba(10, 14, 26, 0.95) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(10px);
+}
+
+.header.sticky {
+  background: var(--c-bg-body) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5) !important;
+  border-bottom: 1px solid rgba(204, 164, 59, 0.2) !important;
+}
+
+/* Ссылки главного меню */
+.main-nav_menu .menu li a {
+  color: #fff !important;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.main-nav_menu .menu li a:hover,
+.main-nav_menu .menu li.active a {
+  color: var(--c-gold-light) !important;
+  text-shadow: 0 0 10px rgba(204, 164, 59, 0.6);
+}
+
+/* Выпадающее меню (Sub-menu) - Добавлено */
+.main-nav_menu .sub-menu {
+  background: var(--c-bg-card) !important;
+  border: 1px solid var(--c-gold) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+.main-nav_menu .sub-menu li a {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  color: var(--c-text-muted) !important;
+}
+.main-nav_menu .sub-menu li a:hover {
+  background: var(--c-bg-card-hover) !important;
+  color: var(--c-gold-light) !important;
+  padding-left: 15px !important;
+}
+
+/* Мобильное меню */
+@media (max-width: 991px) {
+  #mobile-menu {
+    background: var(--c-bg-body) !important;
+    border-right: 1px solid var(--c-gold) !important;
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  #mobile-menu li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  }
+
+  #mobile-menu li a {
+    color: #fff !important;
+  }
+
+  /* Крестик закрытия меню */
+  .nbtn-close {
+    color: #fff !important;
+    opacity: 1 !important;
+    background: none !important;
+  }
+
+  /* Иконка бургера (три полоски) */
+  .header-trigger span,
+  .header-trigger span::before,
+  .header-trigger span::after {
+    background-color: #fff !important;
+  }
+}
+
+/* ==========================================================================
+   3. POPUP (СНИЗУ ПО ЦЕНТРУ)
+   File: layouts/shortcodes/block/popup.html
+   ========================================================================== */
+.popup {
+  background: var(--c-bg-card) !important;
+  border: 2px solid var(--c-gold) !important;
+  border-bottom: none !important;
+  border-radius: 20px 20px 0 0 !important;
+  padding: 30px 40px !important;
+
+  width: 100% !important;
+  max-width: 500px !important;
+  margin: 0 !important;
+
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.8) !important;
+  pointer-events: auto !important; /* Включаем клики для блока */
+  bottom: 0;
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.popup.show {
+  opacity: 1 !important;
+}
+
+/* Блок контента */
+.popup_block {
+}
+
+.popup.show .popup_block {
+  transform: translateY(0) !important;
+}
+
+.popup_block .block_txt span {
+  font-size: 3.5rem !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+  display: block !important;
+  background: var(--c-gold-gradient) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  margin-bottom: 10px !important;
+}
+
+.popup_block .block_txt p {
+  color: #fff !important;
+  text-transform: uppercase !important;
+  font-size: 1.1rem !important;
+  margin-bottom: 20px !important;
+}
+
+.popup-close {
+  position: absolute !important;
+  top: 15px !important;
+  right: 20px !important;
+  background: transparent !important;
+  border: none !important;
+  font-size: 28px !important;
+  color: var(--c-text-muted) !important;
+  cursor: pointer !important;
+}
+.popup-close:hover {
+  color: #fff !important;
+  transform: rotate(90deg);
+}
+
+/* ==========================================================================
+   4. СТИЛИ ДЛЯ ПАПКИ PLACEHOLDERS
+   Files: button.html, two-botton.html, icon-and-text.html, logo.html, etc.
+   ========================================================================== */
+
+/* --- Buttons (button.html & two-botton.html) --- */
+.button_cont,
+.group_btn {
+  display: flex !important;
+  gap: 15px !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important; /* По центру по умолчанию */
+}
+
+/* Класс .button используется в placeholders вместо .btn */
+.button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 12px 35px !important;
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  border-radius: 50px !important;
+  transition: 0.3s ease !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+}
+
+/* Основная кнопка (Золотая) */
+.button1 {
+  background: var(--c-gold-gradient) !important;
+  color: #000 !important;
+  border: 2px solid transparent !important;
+  box-shadow: 0 4px 15px rgba(204, 164, 59, 0.3) !important;
+}
+.button1:hover {
+  box-shadow: 0 0 25px rgba(204, 164, 59, 0.6) !important;
+  transform: translateY(-2px) !important;
+  color: #000 !important;
+}
+
+/* Вторичная кнопка (Контурная) */
+.button2 {
+  background: transparent !important;
+  border: 2px solid var(--c-gold) !important;
+  color: var(--c-gold) !important;
+}
+.button2:hover {
+  background: rgba(204, 164, 59, 0.1) !important;
+  color: #fff !important;
+  box-shadow: 0 0 15px rgba(204, 164, 59, 0.2) !important;
+}
+
+/* --- Icon & Text (icon-and-text.html) --- */
+.contact-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 15px !important;
+  margin-bottom: 20px !important;
+}
+.contact-item img {
+  max-width: 40px !important;
+  height: auto !important;
+  /* Окрашиваем иконки в золото, если они ч/б */
+  filter: brightness(0) saturate(100%) invert(75%) sepia(56%) saturate(546%) hue-rotate(359deg) brightness(92%) contrast(89%) !important;
+}
+.contact-item strong {
+  color: #fff !important;
+  display: block !important;
+  font-size: 1.1rem !important;
+}
+.contact-item span {
+  color: var(--c-text-muted) !important;
+}
+
+/* --- Logo Placeholder (logo.html) --- */
+.logo-text {
+  color: #fff !important;
+  font-family: 'Josefin Sans', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 24px !important;
+  text-transform: uppercase !important;
+}
+.logo img {
+  /* Золотой фильтр для лого */
+  filter: brightness(0) saturate(100%) invert(75%) sepia(56%) saturate(546%) hue-rotate(359deg) brightness(92%) contrast(89%) !important;
+}
+
+/* --- Menu Footer Placeholder (menu-footer.html) --- */
+.main-nav_footer .footer-links {
+  padding: 0 !important;
+  list-style: none !important;
+}
+.main-nav_footer .menu-item {
+  margin: 0 15px !important;
+}
+.main-nav_footer .menu-item a {
+  color: var(--c-text-muted) !important;
+  font-size: 14px !important;
+  text-transform: uppercase !important;
+}
+.main-nav_footer .menu-item.active a,
+.main-nav_footer .menu-item a:hover {
+  color: var(--c-gold) !important;
+  text-decoration: underline !important;
+}
+
+/* --- Text & Titles (title-h1.html, text-only.html) --- */
+.main_text h1 {
+  font-size: 3rem !important;
+  background: var(--c-gold-gradient) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+.main_text h2 {
+  font-size: 2.5rem !important;
+  color: var(--c-gold-light) !important;
+}
+.info-item strong {
+  color: var(--c-gold) !important;
+}
+
+/* --- Copyright (copyright.html) --- */
+.copyright p {
+  color: #4a5568 !important;
+  font-size: 13px !important;
+  margin: 0 !important;
+}
+
+/* ==========================================================================
+   5. ГЛОБАЛЬНЫЕ КНОПКИ (ИЗ ТЕМЫ)
+   ========================================================================== */
+.cmn--btn,
+.btn,
+.btn--primary,
+.btn--base {
+  background: var(--c-gold-gradient) !important;
+  color: #000 !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(204, 164, 59, 0.3) !important;
+  border-radius: 50px !important;
+  transition: 0.3s ease !important;
+}
+
+.cmn--btn:hover,
+.btn:hover {
+  box-shadow: 0 0 25px rgba(204, 164, 59, 0.6) !important;
+  transform: translateY(-2px);
+  color: #000 !important;
+}
+
+/* ==========================================================================
+   6. КАРТОЧКИ И ШОРТКОДЫ (GAMES, FEATURES, ETC)
+   ========================================================================== */
+.game-item,
+.game-item-2,
+.feature,
+.why-item {
+  padding: 20px;
+  background: var(--c-bg-card) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: var(--radius-main) !important;
+  box-shadow: var(--shadow-soft) !important;
+  transition: 0.3s !important;
+}
+
+.game-item:hover,
+.game-item-2:hover,
+.feature:hover,
+.why-item:hover {
+  border-color: var(--c-gold) !important;
+  background: var(--c-bg-card-hover) !important;
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-glow) !important;
+}
+
+.game-content .title,
+.game-title,
+.feature h3 {
+  color: #fff !important;
+  font-weight: 700 !important;
+}
+
+/* Иконки в Features */
+.feature i {
+  color: var(--c-gold) !important;
+  text-shadow: 0 0 15px rgba(204, 164, 59, 0.4);
+}
+
+/* Таблицы */
+table {
+  background: var(--c-bg-card) !important;
+  border-radius: var(--radius-main) !important;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  box-shadow: var(--shadow-soft) !important;
+  width: 100% !important;
+}
+thead th {
+  background: #10141d !important;
+  color: var(--c-gold) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding: 15px !important;
+}
+tbody td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  padding: 15px !important;
+  color: var(--c-text-main) !important;
+}
+tbody td:first-child {
+  color: var(--c-gold-light) !important;
+  font-weight: 700;
+}
+
+/* FAQ */
+.faq-item {
+  background: var(--c-bg-card) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: 8px !important;
+  margin-bottom: 10px !important;
+}
+.faq-title {
+  color: #fff !important;
+  font-weight: 600 !important;
+  padding: 15px 20px !important;
+}
+.faq-title::after {
+  content: '+' !important;
+  color: var(--c-gold) !important;
+}
+
+/* Smart Banner */
+.smart-banner {
+  background: linear-gradient(90deg, var(--c-bg-card) 0%, #1f2a40 100%) !important;
+  border-top: 1px solid var(--c-gold) !important;
+  border-bottom: 1px solid var(--c-gold) !important;
+  padding: 15px 0 !important;
+  margin: 20px 0 !important;
+}
+
+/* Формы */
+input,
+textarea,
+.form--control {
+  background: #0b0e14 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #fff !important;
+  border-radius: 8px !important;
+  padding: 15px !important;
+}
+input:focus,
+.form--control:focus {
+  border-color: var(--c-gold) !important;
+  box-shadow: 0 0 10px rgba(204, 164, 59, 0.2) !important;
+}
+
+/* ==========================================================================
+   7. FOOTER
+   ========================================================================== */
+.footer-section {
+  background: #020202 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+  margin-top: 0 !important;
+  padding-top: 60px !important;
+}
+
+.copyright {
+  color: #4a5568 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+  margin-top: 40px !important;
+  padding-top: 20px !important;
+}
