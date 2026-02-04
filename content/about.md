@@ -2,6 +2,7 @@
 title: 'О нас'
 
 description: 'Описание для О нас'
+date: 2026-01-25T12:00:00+03:00
 lastmod: 2025-09-29
 priority: 1.0
 ---

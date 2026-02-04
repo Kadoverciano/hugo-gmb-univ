@@ -1,0 +1,10 @@
+/config/secrets/
+/.env*
+/var/
+/vendor/
+node_modules/
+*.log
+.mysql_history
+.config/
+.local/
+.subversion/
