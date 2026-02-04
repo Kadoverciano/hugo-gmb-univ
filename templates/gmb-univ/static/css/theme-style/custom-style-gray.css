@@ -296,10 +296,9 @@ a:hover {
   font-size: 24px !important;
   text-transform: uppercase !important;
 }
-.logo img {
-  /* Золотой фильтр для лого */
+/* .logo img {
   filter: brightness(0) saturate(100%) invert(75%) sepia(56%) saturate(546%) hue-rotate(359deg) brightness(92%) contrast(89%) !important;
-}
+} */
 
 /* --- Menu Footer Placeholder (menu-footer.html) --- */
 .main-nav_footer .footer-links {

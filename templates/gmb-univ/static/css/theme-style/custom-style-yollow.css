@@ -396,9 +396,9 @@ tbody td:first-child {
 .logo-text {
   color: #ffffff !important;
 }
-.logo img {
+/* .logo img {
   filter: brightness(0) invert(1) !important;
-}
+} */
 
 /* Smart Banner */
 .smart-banner {
